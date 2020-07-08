@@ -1,0 +1,179 @@
+.header-fluid{
+	background-color: #fdd835;
+	height: 40px;
+}
+
+
+
+.header {
+	display: flex;
+	/*background-color: yellow;*/
+	height: 100%;
+}
+
+.products-category-box{
+	/*border: 1px solid black;*/
+/*	display: flex;
+	align-items: center;*/
+
+	/*font-size: 0.9rem;*/
+	position: relative;
+	padding: 0px;
+}
+
+.products-category {
+	padding: 0px;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	border: 0.5px solid #00000000;
+
+}
+
+.products-category-border {
+    border: 0.5px solid #0000001c;
+    box-shadow: 0px 0px 1px 0px;
+}
+
+.products-category li {
+	display: flex;
+	align-items: center;
+	padding: 10px 5px;
+}
+
+.products-category li:first-child {
+	padding: 7px 5px;
+}
+
+.play-arrow {
+	transform: rotate(90deg);
+	font-size: 1rem !important;
+	padding-right: 3px;
+}
+
+.danh-muc-san-pham {
+	font-size: 14px;
+	font-weight: 700;
+	margin-right: 2.4rem;
+}
+
+
+.next-arrow {
+	font-size: 1.2rem !important;
+	color: #a7a7a7;
+	/*padding-bottom: 3px;*/
+	margin-left: auto;
+
+}
+
+.name-products-category{
+	font-size: 14px;
+}
+
+.logo-products{
+	width: 22px;
+	height: 22px;
+	margin-right: 0.5rem;
+}
+
+
+
+/*----------------------------*/
+
+
+
+.other-category{
+	display: flex;
+
+	list-style-type: none;
+	justify-content: space-between;
+	/*align-items: center;*/
+	margin: 0px;
+	padding: 0px;
+
+	position: relative;
+}
+
+.other-category li {
+	display: flex;
+	font-size: 14px;
+	align-items: center;
+}
+
+
+.navigate-next {
+	margin-left: 4px;
+    padding-top: 1px;
+    font-size: 1rem !important;
+}
+
+/*---------------------------------*/
+
+.product-brands-box {
+    background-color: yellow;
+    /* border: 0.5px solid #0000001c; */
+    box-shadow: 1px 1px 0px 0px #ddd;
+    height: 330px;
+    width: max-content;
+    position: absolute;
+    bottom: -1.5px;
+    left: 16.73vw;
+    display: none;
+}
+
+
+.brand-list {
+	padding: .5rem 1rem 0px 0rem;
+    list-style-type: none;
+    width: max-content;
+    /* margin-left: 1.5rem; */
+    /* padding-right: 1rem; */
+    margin: .7rem 0px 0px 1.5rem;
+}
+
+.brand-list li {
+	font-size: 14px;
+	font-weight: 200;
+	padding: 0px !important;
+	margin-bottom: .7rem;
+}
+
+.brand-list a:hover {
+	color: #007bff !important;
+}
+
+.racket-brands {
+	display: none;
+}
+
+.shoes-brands {
+	display: none;
+}
+
+
+.t_shirt-brands {
+	display: none;
+}
+
+.dress-brands {
+	display: none;
+}
+
+.pants-brands {
+	display: none;
+}
+
+.tui-brands {
+	display: none;
+}
+
+.bag-brands {
+	display: none;
+}
+
+.accessories-brands {
+	display: none;
+}
+
+
+

@@ -1,0 +1,151 @@
+.navigation-main {
+	width: 100vw;
+	height: 56px;
+	background-color: #218eff;
+	color: #fff;
+	display: flex;
+}
+
+
+.search-box {
+	display: flex;
+	align-items: center;
+}
+
+
+
+.form-search-box{
+	display: flex;
+	width: 100%;
+	margin: 0px;
+}
+
+.search-box-input {
+	border-radius: 10px 0px 0px 10px;
+	border: 0px;
+	font-size: 0.8rem;
+}
+
+.btn-search {
+	background-color: #ffc107;
+	border: 0px;
+	border-radius: 0px 10px 10px 0px;
+
+}
+
+.search-icon{
+	margin: 3px 12px;
+}
+
+.hotline-box {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 0.9rem;
+
+}
+
+
+.hotline {
+	font-weight: 600;
+	margin-bottom: 0px;
+}
+
+.khach-si-box {
+	font-weight: 600;
+	margin: 0px;
+}
+
+.khach-si{
+	font-size: 0.8rem;
+	font-weight: normal;
+	margin: 0px;
+}
+
+.account-box {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 0.9rem;
+
+    flex: 0 0 12.666667%;
+    max-width: 12.666667%;
+
+    padding: 0px;
+    position: relative;
+
+}
+
+
+
+
+
+
+.cart-box {
+	height: 100%;
+	display: flex;
+	align-items: center; 
+	padding: 0px 5px 0px 10px;
+	position: relative;
+}
+
+
+
+
+.badge-cart {
+	position: absolute;
+    top: 8px;
+    right: -13px;
+    font-size: 0.7rem;
+}
+
+.sign-box{
+	/*display: block;*/
+	display: none;
+	flex-direction: column;
+	position: absolute;
+	left: -15px;
+	bottom: -75px;
+	width: 100%;
+	background-color: yellow;
+
+	border-radius: 10px;
+    padding: 0px;
+    list-style-type: none;
+
+    z-index: 99;
+}
+
+.sign-box li {
+	margin: 5px 15px;
+}
+
+
+.chinh-sach-box {
+	position: absolute;
+    bottom: -85px;
+    left: 0px;
+    list-style-type: none;
+    padding: 6px;
+    width: max-content;
+    border-radius: 11px;
+    background-color: yellow;
+    display: none;
+}
+
+.chinh-sach-box a {
+	color: black;
+}
+
+.chinh-sach-box a:hover {
+	color: #007bff !important;
+	text-decoration: none;
+}
+
+.products-list{
+	padding: 0px;
+	display: none;
+}
+
