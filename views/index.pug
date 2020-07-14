@@ -1,4 +1,118 @@
 extends ./layouts/common
 
 block content
-	h1 Okay
+	//- add swiper demo
+	link(rel="stylesheet", href="/styles/swiper.min.css")
+	script(src="/styles/swiper.min.js")
+
+
+	.container
+
+		#carouselExampleIndicators.banner.carousel.slide(data-ride='carousel')
+			ol.carousel-indicators
+				li.active(data-target='#carouselExampleIndicators', data-slide-to='0')
+				li(data-target='#carouselExampleIndicators', data-slide-to='1')
+				li(data-target='#carouselExampleIndicators', data-slide-to='2')
+				li(data-target='#carouselExampleIndicators', data-slide-to='3')
+
+			.carousel-inner
+				.carousel-item.active
+					img.d-block.w-100(src='/images/banner_wucht.jpg')
+				.carousel-item
+					img.d-block.w-100(src='/images/banner_cushion.jpg')
+				.carousel-item
+					img.d-block.w-100(src='/images/banner_comfort.jpg')
+				.carousel-item
+					img.d-block.w-100(src='/images/banner_cushion88.jpg')
+			a.carousel-control-prev(href='#carouselExampleIndicators', role='button', data-slide='prev')
+				span.carousel-control-prev-icon(aria-hidden='true')
+				span.sr-only Previous
+			a.carousel-control-next(href='#carouselExampleIndicators', role='button', data-slide='next')
+				span.carousel-control-next-icon(aria-hidden='true')
+				span.sr-only Next
+
+		.advantage-bar
+			.adv.hotline-adv
+				img.adv-icon(src="/images/icon_hotline.svg")
+				.adv-content
+					p.adv-content-title Hotline (08-17h. trừ CN và chiều thứ 7)
+					p.adv-content-note Hotline: 07886126959
+
+			.adv.hotline-adv
+				img.adv-icon(src="/images/icon_quality.svg")
+				.adv-content
+					p.adv-content-title Bảo đảm chất lượng
+					p.adv-content-note Sản phẩm bảo đảm chất lượng
+
+			.adv.hotline-adv
+				img.adv-icon(src="/images/icon_delivery.svg")
+				.adv-content
+					p.adv-content-title Giao hàng toàn quốc
+					p.adv-content-note Thanh toán khi nhận hàng
+
+		form.search-bar
+			input.form-control(type="text", placeholder="Nhập tên sản phẩm", name="product_name")
+			select.form-control(name="product_type")
+				option Tất cả
+				option Vợt cầu lông
+				option Giày cầu lông
+				option Áo cầu lông
+				option Váy cầu lông
+				option Quần cầu lông
+				option Túi cầu lông
+				option Balo cầu lông
+				option Phụ kiện cầu lông
+			select.form-control(name="product_brand")
+				option Tất cả
+				option Yonex
+				option Lining
+				option Victor
+				option Mizuno
+				option Adidas
+				option VNB
+				option Flypower
+				option Kawasaki
+				option Kason
+				option Victec
+			select.form-control(name="product_price")
+				option Tất cả
+				option Giá dưới  500.000đ
+				option 500.000đ - 1 triệu
+				option 1 - 2 triệu
+				option 2 - 3 triệu
+				option Trên 3 triệu
+			button.form-control.btn.btn-primary TÌM KIẾM
+
+		.product-slider
+			p Vợt Cầu Lông
+			.product-slider-title
+				a(href="/#no") Vợt cầu lông Yonex /
+				a(href="/#no") Vợt cầu lông Victor /
+				a(href="/#no") Vợt cầu lông Lining /
+				a(href="/#no") Vợt cầu lông Mizuno /
+				a(href="/#no").text-primary Xem tất cả
+
+			//- swiper
+			ul.product-lists.swiper-container
+				.swiper-wrapper
+					each racket in rackets
+						li.product-box.card.swiper-slide
+								a(href=racket.link).product-box-img
+									img(src=racket.img)
+								.card-body
+									a(href=racket.link).card-title= racket.title
+									a(href=racket.link).card-text= racket.price
+				//- Add pagination
+				.swiper-pagination
+				//- Add arrow
+				.swiper-button-next
+				.swiper-button-prev
+		script(src="/styles/product_slider.js")
+
+
+
+
+
+
+
+

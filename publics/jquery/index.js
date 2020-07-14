@@ -15,7 +15,8 @@ $(document).ready(function(){
 	// PRODUCCTS CATEGORY
 
 	$(".products-category-title").click(function(){
-		$(".products-list").slideToggle("fast");
+
+		$(".products-list").toggle("fast");
 		$(".products-category").toggleClass("products-category-border");
 	})
 

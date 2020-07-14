@@ -147,12 +147,9 @@
     border-radius: 11px;
     background-color: yellow;
     display: none;
+    z-index: 99;
 }
 
-.products-list{
-	padding: 0px;
-	display: none;
-}
 
 .chinh-sach-box a {
 	color: black;
@@ -167,6 +164,7 @@
 	height: 150%;
     display: flex;
     align-items: center;
+    z-index: 99;
 }
 
 /*huong dan
@@ -185,6 +183,7 @@
     border-radius: 11px;
     background-color: yellow;
     display: none;
+    z-index: 99;
 }
 
 
@@ -201,6 +200,7 @@
 	height: 150%;
     display: flex;
     align-items: center;
+    z-index: 98;
 }
 
 /*sản phẩm*/
@@ -213,6 +213,7 @@
 	height: 150%;
 	display: flex;
 	align-items: center;
+    z-index: 99;
 }
 
 
@@ -230,6 +231,7 @@ position: absolute;
     width: max-content;
 
     display: none;
+    z-index: 99;
 }
 
 .san-pham-box a:hover {

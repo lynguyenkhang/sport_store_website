@@ -9,23 +9,22 @@ var mongoose = require('mongoose');
 mongoose.connect(process.env.MONGOLAB_ROSE_URI);	
 
 
-
-
 app.set('view engine', 'pug');
 app.set('views', './views');
 app.use(express.static	('publics'));
 
-
 // middlewares
 var brandsMiddleware = require('./middlewares/brandsList.middleware.js');
-
+var productMiddleware = require('./middlewares/products.middleware.js');
 app.use(brandsMiddleware.list);
 
 
 
-app.get('/',function(req,res){
+app.get('/', productMiddleware.load,function(req,res,next){
+	// console.log(req.products[0]);
 	res.render('index',{
-		keyword: "Bạn tìm gì ..."
+		keyword: "Bạn tìm gì ...",
+		rackets: req.rackets
 	});
 })
 

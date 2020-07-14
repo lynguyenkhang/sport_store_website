@@ -27,6 +27,7 @@
 	top: 0px;
 	left: 0px;
 	border: 0.5px solid #00000000;
+    z-index: 99;
 
 }
 
@@ -43,6 +44,12 @@
 
 .products-category li:first-child {
 	padding: 7px 5px;
+}
+
+.products-list{
+	padding: 0px;
+	display: none;
+	background-color: #fff;
 }
 
 .play-arrow {
@@ -111,14 +118,15 @@
 
 .product-brands-box {
     background-color: yellow;
-    /* border: 0.5px solid #0000001c; */
+     border: 0.5px solid #0000001c; 
     box-shadow: 1px 1px 0px 0px #ddd;
-    height: 330px;
+    height: 328px;
     width: max-content;
     position: absolute;
-    bottom: -1.5px;
+    bottom: 1px;
     left: 16.73vw;
     display: none;
+    z-index: 99;
 }
 
 
