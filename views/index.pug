@@ -82,7 +82,7 @@ block content
 				option 2 - 3 triệu
 				option Trên 3 triệu
 			button.form-control.btn.btn-primary TÌM KIẾM
-
+		//- RACKET PRODUCT-SLIDER
 		.product-slider
 			p Vợt Cầu Lông
 			.product-slider-title
@@ -107,6 +107,141 @@ block content
 				//- Add arrow
 				.swiper-button-next
 				.swiper-button-prev
+
+
+		//- SHOES PRODUCT-SLIDER
+		.product-slider
+			p Giày Cầu Lông
+			.product-slider-title
+				a(href="/#no") Giày cầu lông Yonex /
+				a(href="/#no") Giày cầu lông Victor /
+				a(href="/#no") Giày cầu lông Lining /
+				a(href="/#no") Giày cầu lông Mizuno /
+				a(href="/#no").text-primary Xem tất cả
+
+			//- swiper
+			ul.product-lists.swiper-container
+				.swiper-wrapper
+					each shoes in shoesList
+						li.product-box.card.swiper-slide
+								a(href=shoes.link).product-box-img
+									img(src=shoes.img)
+								.card-body
+									a(href=shoes.link).card-title= shoes.title
+									a(href=shoes.link).card-text= shoes.price
+				//- Add pagination
+				.swiper-pagination
+				//- Add arrow
+				.swiper-button-next
+				.swiper-button-prev
+
+		//- T_SHIRT PRODUCT SLIDER
+		.product-slider
+			p Áo Cầu Lông
+			.product-slider-title
+				a(href="/#no") Áo cầu lông Yonex /
+				a(href="/#no") Áo cầu lông Victor /
+				a(href="/#no") Áo cầu lông Lining /
+				a(href="/#no") Áo cầu lông Mizuno /
+				a(href="/#no").text-primary Xem tất cả
+
+			//- swiper
+			ul.product-lists.swiper-container
+				.swiper-wrapper
+					each t_shirt in t_shirtList
+						li.product-box.card.swiper-slide
+								a(href=t_shirt.link).product-box-img
+									img(src=t_shirt.img)
+								.card-body
+									a(href=t_shirt.link).card-title= t_shirt.title
+									a(href=t_shirt.link).card-text= t_shirt.price
+				//- Add pagination
+				.swiper-pagination
+				//- Add arrow
+				.swiper-button-next
+				.swiper-button-prev
+
+
+
+		//- PANTS PRODUCT SLIDER
+		.product-slider
+			p Quần Cầu Lông
+			.product-slider-title
+				a(href="/#no") Quần cầu lông Yonex /
+				a(href="/#no") Quần cầu lông Victor /
+				a(href="/#no") Quần cầu lông Lining /
+				a(href="/#no") Quần cầu lông Mizuno /
+				a(href="/#no").text-primary Xem tất cả
+
+			//- swiper
+			ul.product-lists.swiper-container
+				.swiper-wrapper
+					each pants in pantsList
+						li.product-box.card.swiper-slide
+								a(href=pants.link).product-box-img
+									img(src=pants.img)
+								.card-body
+									a(href=pants.link).card-title= pants.title
+									a(href=pants.link).card-text= pants.price
+				//- Add pagination
+				.swiper-pagination
+				//- Add arrow
+				.swiper-button-next
+				.swiper-button-prev
+
+		//- BALO PRODUCT SLIDER
+		.product-slider
+			p Balo Cầu Lông
+			.product-slider-title
+				a(href="/#no") Balo cầu lông Yonex /
+				a(href="/#no") Balo cầu lông Victor /
+				a(href="/#no") Balo cầu lông Lining /
+				a(href="/#no") Balo cầu lông Mizuno /
+				a(href="/#no").text-primary Xem tất cả
+
+			//- swiper
+			ul.product-lists.swiper-container
+				.swiper-wrapper
+					each balo in baloList
+						li.product-box.card.swiper-slide
+								a(href=balo.link).product-box-img
+									img(src=balo.img)
+								.card-body
+									a(href=balo.link).card-title= balo.title
+									a(href=balo.link).card-text= balo.price
+				//- Add pagination
+				.swiper-pagination
+				//- Add arrow
+				.swiper-button-next
+				.swiper-button-prev
+
+
+		//- ACcESSORIES PRODUCT SLIDER
+		.product-slider
+			p Phụ  Cầu Lông
+			.product-slider-title
+				a(href="/#no") Vớ cầu lông /
+				a(href="/#no") Cước đan cầu lông /
+				a(href="/#no") Quấn cán cầu  /
+				a(href="/#no").text-primary Xem tất cả
+
+			//- swiper
+			ul.product-lists.swiper-container
+				.swiper-wrapper
+					each accessories in accessoriesList
+						li.product-box.card.swiper-slide
+								a(href=accessories.link).product-box-img
+									img(src=accessories.img)
+								.card-body
+									a(href=accessories.link).card-title= accessories.title
+									a(href=accessories.link).card-text= accessories.price
+				//- Add pagination
+				.swiper-pagination
+				//- Add arrow
+				.swiper-button-next
+				.swiper-button-prev
+
+
 		script(src="/styles/product_slider.js")
 
 

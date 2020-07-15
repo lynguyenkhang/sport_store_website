@@ -3,7 +3,8 @@
 	padding: 5px;
 	border-radius: 5px;
     border: 0.5px solid #0000001c;
-    box-shadow: 0px 0px 2px 1px #ddd;}
+    box-shadow: 0px 0px 2px 1px #ddd;
+    margin-bottom: 30px;}
 	.product-slider p {
 		font-size: 1rem;
 		font-weight: bold;
@@ -12,7 +13,7 @@
 	}
 	.product-slider-title{
 		text-align: right;
-		margin-bottom: 5px;}
+		margin-bottom: 10px;}
 		.product-slider-title a {
 			color: #222;
 			font-size: 14px;
