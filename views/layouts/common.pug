@@ -6,6 +6,7 @@ html
 		link(rel="stylesheet", href="/styles/header_2.css")
 		link(rel="stylesheet", href="/styles/index.css")
 		link(rel="stylesheet", href="/styles/product_slider.css")
+		link(rel="stylesheet", href="/styles/all_products.css")
 
 
 		//- ICON FONT
@@ -162,10 +163,12 @@ html
 
 
 				ul.other-category.col-9
-					li Trang chủ
-					li Giới thiệu
+					li
+						a.active-red(href="./") Trang chủ
+					li
+						a(href="./") Giới thiệu
 					li.san-pham
-						.san-pham-content
+						a(href="./products").san-pham-content
 							span Sản phẩm
 							span.material-icons.navigate-next navigate_next
 
@@ -244,11 +247,12 @@ html
 
 
 
-					li Tin tức
+					li
+						a(href="./") Tin tức
 
 
 					li.chinh-sach
-						.chinh-sach-content
+						a(href="./").chinh-sach-content
 							span Chính sách
 							span.material-icons.navigate-next navigate_next
 						ul.chinh-sach-box
@@ -260,7 +264,7 @@ html
 								a(href="#") Chính sách nhượng quyền
 					//- reuse chinh-sach element
 					li.huong-dan
-						.huong-dan-content
+						a(href="./").huong-dan-content
 							span Hướng dẫn
 							span.material-icons.navigate-next navigate_next
 						ul.huong-dan-box
@@ -269,7 +273,8 @@ html
 							li
 								a(href="#") Hướng dẫn mua 
 
-					li Liên hệ
+					li 
+						a(href="./") Liên hệ
 
 
 

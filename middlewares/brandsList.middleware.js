@@ -55,8 +55,8 @@ module.exports.list = async function(req, res, next){
 	res.locals.bagBrands_sp = brands[6].brands.slice(0, 5);
 
 	accessoriesBrands = brands[7].brands;
-	console.log(convertVNese(accessoriesBrands[0]));
-	console.log(addSpace(accessoriesBrands[0]));
+	// console.log(convertVNese(accessoriesBrands[0]));
+	// console.log(addSpace(accessoriesBrands[0]));
 
 	var nameAccessoriesBrands = [];
 	var linkAccessoriesBrands = [];

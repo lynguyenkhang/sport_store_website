@@ -1,0 +1,53 @@
+extends ../layouts/common
+
+block content
+
+	.products-box.container
+		.products-box-intro
+			.products-box-link
+				a.home-page-link.pages-link(href="./") Trang chủ
+				span.material-icons.next-arrow.ml-0 navigate_next
+				a.products-page-link.pages-link(href="./products") Tất cả sản phẩm
+			h2.products-box-title Tất cả sản phẩm
+		.products-box-show
+			//- reuse from products-slider component
+			each product in productList
+				li.product-box.card.all-products-box
+						a(href=product.link).product-box-img
+							img(src=product.img)
+						.card-body.mb-3
+							a(href=product.link).card-title= product.title
+							a(href=product.link).card-text= product.price
+
+
+		.pagination-nav(aria-label='Page navigation example')
+			ul.pagination
+				li.page-item
+					a.page-link(href='/products?page=' + paginationNumber[0]) 
+						span.material-icons.ml-0.pagination-icon arrow_back_ios
+
+				li.page-item
+					a.page-link(href='/products?page=' + paginationNumber[1])= paginationNumber[1]
+				li.page-item
+					a.page-link(href='/products?page=' + paginationNumber[2])= paginationNumber[2]
+				li.page-item
+					a.page-link(href='/products?page=' + paginationNumber[3])= paginationNumber[3]
+				li.page-item
+					a.page-link(href='/products?page=' + paginationNumber[4])= paginationNumber[4]
+				li.page-item
+					a.page-link(href='/products?page=' + paginationNumber[5])= paginationNumber[5]
+				li.page-item
+					a.page-link(href='/products?page=' + paginationNumber[6])= paginationNumber[6]
+				li.page-item
+					a.page-link(href='/products?page=' + paginationNumber[7])= paginationNumber[7]
+				li.page-item
+					a.page-link(href='/products?page=' + paginationNumber[8])= paginationNumber[8]
+				li.page-item
+					a.page-link(href='/products?page=' + paginationNumber[9])= paginationNumber[9]
+				li.page-item
+					a.page-link(href='/products?page=' + paginationNumber[10])= paginationNumber[10]
+
+
+				li.page-item
+					a.page-link(href='/products?page=' + paginationNumber[11]) 
+						span.material-icons.ml-0.pagination-icon navigate_next

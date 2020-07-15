@@ -108,6 +108,20 @@
 }
 
 
+.other-category a {
+	color: #222;
+	text-decoration: none;
+}
+
+.other-category a:hover {
+	color: #007bff !important;
+}
+
+
+.active-red {
+	color: red !important;
+}
+
 .navigate-next {
 	margin-left: 4px;
     padding-top: 1px;

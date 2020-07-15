@@ -18,6 +18,7 @@ var brandsMiddleware = require('./middlewares/brandsList.middleware.js');
 var productMiddleware = require('./middlewares/products.middleware.js');
 app.use(brandsMiddleware.list);
 
+var productsRoute = require('./routes/products.route.js');
 
 
 app.get('/', productMiddleware.load,function(req,res,next){
@@ -27,6 +28,9 @@ app.get('/', productMiddleware.load,function(req,res,next){
 		rackets: req.rackets
 	});
 })
+
+
+app.use('/products',productsRoute);
 
 
 

@@ -236,7 +236,7 @@ position: absolute;
 
 .san-pham-box a:hover {
 	color: #189eff;
-	text-decoration: underline;
+	text-decoration: none;
 }
 
 .san-pham-top {
@@ -273,5 +273,6 @@ position: absolute;
     margin-top: 5px;
     color: black;
 }
+
 
 
