@@ -5,10 +5,40 @@ block content
 	.products-box.container
 		.products-box-intro
 			.products-box-link
-				a.home-page-link.pages-link(href="./") Trang chủ
+				a.home-page-link.pages-link(href="/") Trang chủ
 				span.material-icons.next-arrow.ml-0 navigate_next
-				a.products-page-link.pages-link(href="./products") Tất cả sản phẩm
-			h2.products-box-title Tất cả sản phẩm
+				a.products-page-link.pages-link(href="#no") Tất cả sản phẩm
+
+
+
+		form.search-bar(action="/products/search", method="GET")
+			input.form-control(type="text", placeholder=placeholder ? placeholder : "Nhập tên sản phẩm", name="name")
+			select.form-control(name="type")
+				option Tất cả
+				option Vợt cầu lông
+				option Giày cầu lông
+				option Áo cầu lông
+				option Quần cầu lông
+				option Balo cầu lông
+				option Phụ kiện cầu lông
+			select.form-control(name="brand")
+				option Tất cả
+				option Yonex
+				option Lining
+				option Victor
+			select.form-control(name="price")
+				option Tất cả
+				option Giá dưới  500.000đ
+				option 500.000đ - 1 triệu
+				option 1 - 2 triệu
+				option 2 - 3 triệu
+				option Trên 3 triệu
+			button.form-control.btn.btn-primary TÌM KIẾM
+
+
+
+
+		h2.products-box-title Tất cả sản phẩm
 		.products-box-show
 			//- reuse from products-slider component
 			each product in productList
@@ -23,31 +53,26 @@ block content
 		.pagination-nav(aria-label='Page navigation example')
 			ul.pagination
 				li.page-item
-					a.page-link(href='/products?page=' + paginationNumber[0]) 
+					a.page-link(href='/products' + page + paginationNumber[0]) 
 						span.material-icons.ml-0.pagination-icon arrow_back_ios
 
 				li.page-item
-					a.page-link(href='/products?page=' + paginationNumber[1])= paginationNumber[1]
+					a.page-link(href='/products' + page  + paginationNumber[1])= paginationNumber[1]
 				li.page-item
-					a.page-link(href='/products?page=' + paginationNumber[2])= paginationNumber[2]
+					a.page-link(href='/products' + page  + paginationNumber[2])= paginationNumber[2]
 				li.page-item
-					a.page-link(href='/products?page=' + paginationNumber[3])= paginationNumber[3]
+					a.page-link(href='/products' + page  + paginationNumber[3])= paginationNumber[3]
 				li.page-item
-					a.page-link(href='/products?page=' + paginationNumber[4])= paginationNumber[4]
+					a.page-link(href='/products' + page  + paginationNumber[4])= paginationNumber[4]
 				li.page-item
-					a.page-link(href='/products?page=' + paginationNumber[5])= paginationNumber[5]
-				li.page-item
-					a.page-link(href='/products?page=' + paginationNumber[6])= paginationNumber[6]
-				li.page-item
-					a.page-link(href='/products?page=' + paginationNumber[7])= paginationNumber[7]
-				li.page-item
-					a.page-link(href='/products?page=' + paginationNumber[8])= paginationNumber[8]
-				li.page-item
-					a.page-link(href='/products?page=' + paginationNumber[9])= paginationNumber[9]
-				li.page-item
-					a.page-link(href='/products?page=' + paginationNumber[10])= paginationNumber[10]
+					a.page-link(href='/products' + page  + paginationNumber[5])= paginationNumber[5]
 
 
 				li.page-item
-					a.page-link(href='/products?page=' + paginationNumber[11]) 
+					a.page-link(href='/products' + page  + paginationNumber[6]) 
 						span.material-icons.ml-0.pagination-icon navigate_next
+
+
+
+
+

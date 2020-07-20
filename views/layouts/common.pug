@@ -7,6 +7,7 @@ html
 		link(rel="stylesheet", href="/styles/index.css")
 		link(rel="stylesheet", href="/styles/product_slider.css")
 		link(rel="stylesheet", href="/styles/all_products.css")
+		link(rel="stylesheet", href="/styles/type_product.css")
 
 
 		//- ICON FONT
@@ -31,7 +32,7 @@ html
 				.logo-box.col-3
 				.search-box.col-5
 					form.form-search-box(action="#", method="GET")
-						input.search-box-input.form-control.form-search(type="text",name="searchedUsers",placeholder=keyword)
+						input.search-box-input.form-control(type="text",name="searchedUsers",placeholder=keyword)
 
 						button.btn-search.p-0
 							span.material-icons.search-icon search
@@ -69,37 +70,37 @@ html
 						ul.products-list
 							li(id="racket-title")
 								img.logo-products(src="/images/logo_racket.png")
-								span.name-products-category Vợt Cầu Lông
+								a(href="/products/racket").name-products-category Vợt Cầu Lông
 								span.material-icons.next-arrow navigate_next
 							li(id="shoes-title")
 								img.logo-products(src="/images/logo_shoes.png")
-								span.name-products-category Giày Cầu Lông
+								a(href="/products/shoes").name-products-category Giày Cầu Lông
 								span.material-icons.next-arrow navigate_next
 							li(id="t_shirt-title")
 								img.logo-products(src="/images/logo_t-shirt.png")
-								span.name-products-category Áo Cầu Lông
+								a(href="/products/t_shirt").name-products-category Áo Cầu Lông
 								span.material-icons.next-arrow navigate_next
-							li(id="dress-title")
-								img.logo-products(src="/images/logo_dress.png")
-								span.name-products-category Váy Cầu Lông
-								span.material-icons.next-arrow navigate_next
+							//- li(id="dress-title")
+							//- 	img.logo-products(src="/images/logo_dress.png")
+							//- 	a(href="/products/dress").name-products-category Váy Cầu Lông
+							//- 	span.material-icons.next-arrow navigate_next
 
 							li(id="pants-title")
 								img.logo-products(src="/images/logo_pants.png")
-								span.name-products-category Quần Cầu Lông
+								a(href="/products/pants").name-products-category Quần Cầu Lông
 								span.material-icons.next-arrow navigate_next
 
-							li(id="tui-title")
-								img.logo-products(src="/images/logo_tui.png")
-								span.name-products-category Túi Cầu Lông
-								span.material-icons.next-arrow navigate_next
+							//- li(id="tui-title")
+							//- 	img.logo-products(src="/images/logo_tui.png")
+							//- 	a(href="/products/").name-products-category Túi Cầu Lông
+							//- 	span.material-icons.next-arrow navigate_next
 							li(id="bag-title")
 								img.logo-products(src="/images/logo_bag.png")
-								span.name-products-category Balo Cầu Lông
+								a(href="/products/balo").name-products-category Balo Cầu Lông
 								span.material-icons.next-arrow navigate_next
 							li(id="accessories-title")
 								img.logo-products(src="/images/logo_accessories.png")
-								span.name-products-category Phụ Kiện Cầu Lông
+								a(href="/products/accessories").name-products-category Phụ Kiện Cầu Lông
 								span.material-icons.next-arrow navigate_next
 
 
@@ -107,68 +108,69 @@ html
 								ul.brand-list.racket-brands
 									each brand in racketBrands
 										li
-											a
+											a.link-product-and-brand(href="/products/racket@" + brand)
 												span Vợt cầu lông  
 												span= brand
 
 								ul.brand-list.shoes-brands
 									each brand in shoesBrands
 										li
-											a
+											a.link-product-and-brand(href="/products/shoes@" + brand)
 												span Giày cầu lông  
 												span= brand
 
 								ul.brand-list.t_shirt-brands
 									each brand in t_shirtBrands
 										li
-											a
+											a.link-product-and-brand(href="/products/t_shirt@" + brand)
 												span Áo cầu lông  
 												span= brand
 
 
 												
-								ul.brand-list.dress-brands
-									each brand in dressBrands
-										li
-											a
-												span Váy cầu lông  
-												span= brand
+								//- ul.brand-list.dress-brands
+								//- 	each brand in dressBrands
+								//- 		li
+								//- 			a.link-product-and-brand
+								//- 				span Váy cầu lông  
+								//- 				span= brand
 
 								ul.brand-list.pants-brands
 									each brand in pantsBrands
 										li
-											a
+											a.link-product-and-brand(href="/products/pants@" + brand)
 												span Quần cầu lông  
 												span= brand
 
-								ul.brand-list.tui-brands
-									each brand in tuiBrands
-										li
-											a
-												span Túi cầu lông  
-												span= brand
+								//- ul.brand-list.tui-brands
+								//- 	each brand in tuiBrands
+								//- 		li
+								//- 			a.link-product-and-brand
+								//- 				span Túi cầu lông  
+								//- 				span= brand
 
 								ul.brand-list.bag-brands
-									each brand in bagBrands
+									each brand in baloBrands
 										li
-											a
+											a.link-product-and-brand(href="/products/balo@" + brand)
 												span Balo cầu lông  
 												span= brand
 
 								ul.brand-list.accessories-brands
 									each brand in nameAccessoriesBrands
 										li
-											a
+											a.link-product-and-brand(href="/products/accessories@$" + brand)
 												span= brand
 
 
 				ul.other-category.col-9
 					li
-						a.active-red(href="./") Trang chủ
+						a(href="/", id="trang_chu") Trang chủ
 					li
-						a(href="./") Giới thiệu
+						a(href="/") Giới thiệu
+
 					li.san-pham
-						a(href="./products").san-pham-content
+						a(href="/products").san-pham-content
 							span Sản phẩm
 							span.material-icons.navigate-next navigate_next
 
@@ -178,69 +180,73 @@ html
 									div.san-pham-title VỢT CẦU LÔNG
 									each brand in racketBrands_sp
 										li
-											a
+											a(href="/products/racket@" + brand)
 												span Vợt cầu lông  
 												span= brand
-									a.show-all(href="/#") Xem tất cả...
+									a.show-all(href="/products/racket") Xem tất cả...
 
 								ul.san-pham-giay.p-0
 									div.san-pham-title GIÀY CẦU LÔNG
 									each brand in shoesBrands_sp
 										li
-											a
+											a(href="/products/shoes@" + brand)
 												span Giày cầu lông  
 												span= brand
-									a.show-all(href="/#") Xem tất cả...
+									a.show-all(href="/products/shoes") Xem tất cả...
 
 								ul.san-pham-ao.p-0
 									div.san-pham-title ÁO CẦU LÔNG
 									each brand in t_shirtBrands_sp
 										li
-											a
+											a(href="/products/t_shirt@" + brand)
 												span  Áo cầu lông  
 												span= brand
-									a.show-all(href="/#") Xem tất cả...
+									a.show-all(href="/products/t_shirt") Xem tất cả...
 
-								ul.san-pham-vay.p-0
-									div.san-pham-title VÁY CẦU LÔNG
-									each brand in dressBrands_sp
-										li
-											a
-												span Váy cầu lông  
-												span= brand
-									a.show-all(href="/#") Xem tất cả...
+								//- ul.san-pham-vay.p-0
+								//- 	div.san-pham-title VÁY CẦU LÔNG
+								//- 	each brand in dressBrands_sp
+								//- 		li
+								//- 			a
+								//- 				span Váy cầu lông  
+								//- 				span= brand
+
+								//- 	a.show-all(href="/#") Xem tất cả...
+
+
 							.san-pham-bottom
 								ul.san-pham-quan.p-0
 									div.san-pham-title QUẦN CẦU LÔNG
 									each brand in pantsBrands_sp
 										li
-											a
+											a(href="/products/pants@" + brand)
 												span Quần cầu lông  
 												span= brand
-									a.show-all(href="/#") Xem tất cả...
-								ul.san-pham-tui.p-0
-									div.san-pham-title TÚI CẦU LÔNG
-									each brand in tuiBrands_sp
-										li
-											a
-												span Túi cầu lông  
-												span= brand
-									a.show-all(href="/#") Xem tất cả...
+									a.show-all(href="/products/pants") Xem tất cả...
+
+								//- ul.san-pham-tui.p-0
+								//- 	div.san-pham-title TÚI CẦU LÔNG
+								//- 	each brand in tuiBrands_sp
+								//- 		li
+								//- 			a
+								//- 				span Túi cầu lông  
+								//- 				span= brand
+								//- 	a.show-all(href="/#") Xem tất cả...
 								ul.san-pham-balo.p-0
 									div.san-pham-title BALO CẦU LÔNG
-									each brand in bagBrands_sp
+									each brand in baloBrands_sp
 										li
-											a
+											a(href="/products/balo@" + brand)
 												span Balo cầu lông  
 												span= brand
-									a.show-all(href="/#") Xem tất cả...
+									a.show-all(href="/products/balo") Xem tất cả...
 								ul.san-pham-phu-kien.p-0
 									div.san-pham-title PHỤ KIỆN CẦU LÔNG
 									each brand in nameAccessoriesBrands_sp
 										li
-											a
+											a(href="/products/accessories@$" + brand)
 												span= brand
-									a.show-all(href="/#") Xem tất cả...
+									a.show-all(href="/products/accessories") Xem tất cả...
 
 
 
@@ -248,11 +254,11 @@ html
 
 
 					li
-						a(href="./") Tin tức
+						a(href="/") Tin tức
 
 
 					li.chinh-sach
-						a(href="./").chinh-sach-content
+						a(href="/").chinh-sach-content
 							span Chính sách
 							span.material-icons.navigate-next navigate_next
 						ul.chinh-sach-box
@@ -264,7 +270,7 @@ html
 								a(href="#") Chính sách nhượng quyền
 					//- reuse chinh-sach element
 					li.huong-dan
-						a(href="./").huong-dan-content
+						a(href="/").huong-dan-content
 							span Hướng dẫn
 							span.material-icons.navigate-next navigate_next
 						ul.huong-dan-box
@@ -274,7 +280,7 @@ html
 								a(href="#") Hướng dẫn mua 
 
 					li 
-						a(href="./") Liên hệ
+						a(href="/") Liên hệ
 
 
 

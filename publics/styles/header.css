@@ -75,6 +75,8 @@
 
 .name-products-category{
 	font-size: 14px;
+	text-decoration: none !important;
+	color: #222;
 }
 
 .logo-products{
@@ -131,10 +133,10 @@
 /*---------------------------------*/
 
 .product-brands-box {
-    background-color: yellow;
+    background-color: #fff;
      border: 0.5px solid #0000001c; 
     box-shadow: 1px 1px 0px 0px #ddd;
-    height: 328px;
+    height: 243px;
     width: max-content;
     position: absolute;
     bottom: 1px;
@@ -150,7 +152,7 @@
     width: max-content;
     /* margin-left: 1.5rem; */
     /* padding-right: 1rem; */
-    margin: .7rem 0px 0px 1.5rem;
+    margin: 0rem 0px 0px 1.5rem;
 }
 
 .brand-list li {

@@ -4,6 +4,7 @@
 		.products-box-link{
 			display: flex;
 			align-items: center;
+			margin-bottom: 15px;
 		}
 			.pages-link {
 				font-size: 14px !important;
@@ -24,6 +25,7 @@
 		flex-wrap: wrap;
 		width: 100%;
 		margin-bottom: 20px;
+		justify-content: center;
 	}
 		.all-products-box {
 			height: 300px !important;

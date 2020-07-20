@@ -30,6 +30,7 @@
 	background-color: #ffc107;
 	border: 0px;
 	border-radius: 0px 10px 10px 0px;
+	/*height: 33px;*/
 
 }
 
@@ -109,7 +110,7 @@
 	left: -15px;
 	bottom: -75px;
 	width: 100%;
-	background-color: yellow;
+	background-color: #fff;
 
 	border-radius: 10px;
     padding: 0px;
@@ -145,7 +146,7 @@
     padding: 6px 15px;
     width: max-content;
     border-radius: 11px;
-    background-color: yellow;
+    background-color: #fff;
     display: none;
     z-index: 99;
 }
@@ -181,7 +182,7 @@
     padding: 6px 15px;
     width: max-content;
     border-radius: 11px;
-    background-color: yellow;
+    background-color: #fff;
     display: none;
     z-index: 99;
 }
@@ -218,13 +219,13 @@
 
 
 .san-pham-box {
-position: absolute;
+	position: absolute;
     bottom: -370px;
     left: -19vw;
     list-style-type: none;
     padding: 6px 15px;
     border-radius: 11px;
-    background-color: yellow;
+    background-color: #fff;
     /*height: 350px;
     width: 51vw;*/
     height: max-content;
@@ -274,5 +275,9 @@ position: absolute;
     color: black;
 }
 
+.link-product-and-brand{
+	text-decoration: none !important;
+	color: #222;
+}
 
 

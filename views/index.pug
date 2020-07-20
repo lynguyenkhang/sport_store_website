@@ -7,6 +7,8 @@ block content
 
 
 	.container
+		// làm chữ trang chủ đỏ để hiển thị current page là trang chủ
+		.d-none(id="current_page")= currentPage
 
 		#carouselExampleIndicators.banner.carousel.slide(data-ride='carousel')
 			ol.carousel-indicators
@@ -50,31 +52,22 @@ block content
 					p.adv-content-title Giao hàng toàn quốc
 					p.adv-content-note Thanh toán khi nhận hàng
 
-		form.search-bar
-			input.form-control(type="text", placeholder="Nhập tên sản phẩm", name="product_name")
-			select.form-control(name="product_type")
+		form.search-bar(action="products/search", method="GET")
+			input.form-control(type="text", placeholder="Nhập tên sản phẩm", name="name")
+			select.form-control(name="type")
 				option Tất cả
 				option Vợt cầu lông
 				option Giày cầu lông
 				option Áo cầu lông
-				option Váy cầu lông
 				option Quần cầu lông
-				option Túi cầu lông
 				option Balo cầu lông
 				option Phụ kiện cầu lông
-			select.form-control(name="product_brand")
+			select.form-control(name="brand")
 				option Tất cả
 				option Yonex
 				option Lining
 				option Victor
-				option Mizuno
-				option Adidas
-				option VNB
-				option Flypower
-				option Kawasaki
-				option Kason
-				option Victec
-			select.form-control(name="product_price")
+			select.form-control(name="price")
 				option Tất cả
 				option Giá dưới  500.000đ
 				option 500.000đ - 1 triệu
@@ -86,22 +79,22 @@ block content
 		.product-slider
 			p Vợt Cầu Lông
 			.product-slider-title
-				a(href="/#no") Vợt cầu lông Yonex /
-				a(href="/#no") Vợt cầu lông Victor /
-				a(href="/#no") Vợt cầu lông Lining /
-				a(href="/#no") Vợt cầu lông Mizuno /
-				a(href="/#no").text-primary Xem tất cả
+				a(href="/products/racket@Yonex") Vợt cầu lông Yonex /
+				a(href="/products/racket@Victor") Vợt cầu lông Victor /
+				a(href="/products/racket@Lining") Vợt cầu lông Lining /
+				a(href="/products/racket@Mizuno") Vợt cầu lông Mizuno /
+				a(href="/products/racket").text-primary Xem tất cả
 
 			//- swiper
 			ul.product-lists.swiper-container
 				.swiper-wrapper
 					each racket in rackets
 						li.product-box.card.swiper-slide
-								a(href=racket.link).product-box-img
+								a(href="/products/details/" + racket.link).product-box-img
 									img(src=racket.img)
 								.card-body
-									a(href=racket.link).card-title= racket.title
-									a(href=racket.link).card-text= racket.price
+									a(href="/products/details/" + racket.link).card-title= racket.title
+									a(href="/products/details/" + racket.link).card-text= racket.price
 				//- Add pagination
 				.swiper-pagination
 				//- Add arrow
@@ -113,22 +106,22 @@ block content
 		.product-slider
 			p Giày Cầu Lông
 			.product-slider-title
-				a(href="/#no") Giày cầu lông Yonex /
-				a(href="/#no") Giày cầu lông Victor /
-				a(href="/#no") Giày cầu lông Lining /
-				a(href="/#no") Giày cầu lông Mizuno /
-				a(href="/#no").text-primary Xem tất cả
+				a(href="/products/shoes@Yonex") Giày cầu lông Yonex /
+				a(href="/products/shoes@Victor") Giày cầu lông Victor /
+				a(href="/products/shoes@Lining") Giày cầu lông Lining /
+				a(href="/products/shoes@Mizuno") Giày cầu lông Mizuno /
+				a(href="/products/shoes").text-primary Xem tất cả
 
 			//- swiper
 			ul.product-lists.swiper-container
 				.swiper-wrapper
 					each shoes in shoesList
 						li.product-box.card.swiper-slide
-								a(href=shoes.link).product-box-img
+								a(href="/products/details/" + shoes.link).product-box-img
 									img(src=shoes.img)
 								.card-body
-									a(href=shoes.link).card-title= shoes.title
-									a(href=shoes.link).card-text= shoes.price
+									a(href="/products/details/" + shoes.link).card-title= shoes.title
+									a(href="/products/details/" + shoes.link).card-text= shoes.price
 				//- Add pagination
 				.swiper-pagination
 				//- Add arrow
@@ -139,22 +132,22 @@ block content
 		.product-slider
 			p Áo Cầu Lông
 			.product-slider-title
-				a(href="/#no") Áo cầu lông Yonex /
-				a(href="/#no") Áo cầu lông Victor /
-				a(href="/#no") Áo cầu lông Lining /
-				a(href="/#no") Áo cầu lông Mizuno /
-				a(href="/#no").text-primary Xem tất cả
+				a(href="/products/t_shirt@Yonex") Áo cầu lông Yonex /
+				a(href="/products/t_shirt@Victor") Áo cầu lông Victor /
+				a(href="/products/t_shirt@Lining") Áo cầu lông Lining /
+				a(href="/products/t_shirt@Mizuno") Áo cầu lông Mizuno /
+				a(href="/products/t_shirt").text-primary Xem tất cả
 
 			//- swiper
 			ul.product-lists.swiper-container
 				.swiper-wrapper
 					each t_shirt in t_shirtList
 						li.product-box.card.swiper-slide
-								a(href=t_shirt.link).product-box-img
+								a(href="/products/details/" + t_shirt.link).product-box-img
 									img(src=t_shirt.img)
 								.card-body
-									a(href=t_shirt.link).card-title= t_shirt.title
-									a(href=t_shirt.link).card-text= t_shirt.price
+									a(href="/products/details/" + t_shirt.link).card-title= t_shirt.title
+									a(href="/products/details/" + t_shirt.link).card-text= t_shirt.price
 				//- Add pagination
 				.swiper-pagination
 				//- Add arrow
@@ -167,22 +160,22 @@ block content
 		.product-slider
 			p Quần Cầu Lông
 			.product-slider-title
-				a(href="/#no") Quần cầu lông Yonex /
-				a(href="/#no") Quần cầu lông Victor /
-				a(href="/#no") Quần cầu lông Lining /
-				a(href="/#no") Quần cầu lông Mizuno /
-				a(href="/#no").text-primary Xem tất cả
+				a(href="/products/pants@Yonex") Quần cầu lông Yonex /
+				a(href="/products/pants@Victor") Quần cầu lông Victor /
+				a(href="/products/pants@Lining") Quần cầu lông Lining /
+				a(href="/products/pants@Mizuno") Quần cầu lông Mizuno /
+				a(href="/products/pants").text-primary Xem tất cả
 
 			//- swiper
 			ul.product-lists.swiper-container
 				.swiper-wrapper
 					each pants in pantsList
 						li.product-box.card.swiper-slide
-								a(href=pants.link).product-box-img
+								a(href="/products/details/" + pants.link).product-box-img
 									img(src=pants.img)
 								.card-body
-									a(href=pants.link).card-title= pants.title
-									a(href=pants.link).card-text= pants.price
+									a(href="/products/details/" + pants.link).card-title= pants.title
+									a(href="/products/details/" + pants.link).card-text= pants.price
 				//- Add pagination
 				.swiper-pagination
 				//- Add arrow
@@ -193,22 +186,22 @@ block content
 		.product-slider
 			p Balo Cầu Lông
 			.product-slider-title
-				a(href="/#no") Balo cầu lông Yonex /
-				a(href="/#no") Balo cầu lông Victor /
-				a(href="/#no") Balo cầu lông Lining /
-				a(href="/#no") Balo cầu lông Mizuno /
-				a(href="/#no").text-primary Xem tất cả
+				a(href="/products/balo@Yonex") Balo cầu lông Yonex /
+				a(href="/products/balo@Victor") Balo cầu lông Victor /
+				a(href="/products/balo@Lining") Balo cầu lông Lining /
+				a(href="/products/balo@Mizuno") Balo cầu lông Mizuno /
+				a(href="/products/balo").text-primary Xem tất cả
 
 			//- swiper
 			ul.product-lists.swiper-container
 				.swiper-wrapper
 					each balo in baloList
 						li.product-box.card.swiper-slide
-								a(href=balo.link).product-box-img
+								a(href="/products/details" + balo.link).product-box-img
 									img(src=balo.img)
 								.card-body
-									a(href=balo.link).card-title= balo.title
-									a(href=balo.link).card-text= balo.price
+									a(href="/products/details" + balo.link).card-title= balo.title
+									a(href="/products/details" + balo.link).card-text= balo.price
 				//- Add pagination
 				.swiper-pagination
 				//- Add arrow
@@ -220,21 +213,21 @@ block content
 		.product-slider
 			p Phụ  Cầu Lông
 			.product-slider-title
-				a(href="/#no") Vớ cầu lông /
-				a(href="/#no") Cước đan cầu lông /
-				a(href="/#no") Quấn cán cầu  /
-				a(href="/#no").text-primary Xem tất cả
+				a(href="/products/accessories@$vớ") Vớ cầu lông /
+				a(href="/products/accessories@$cước") Cước đan cầu lông /
+				a(href="/products/accessories@$cán") Quấn cán cầu  /
+				a(href="/products/accessories").text-primary Xem tất cả
 
 			//- swiper
 			ul.product-lists.swiper-container
 				.swiper-wrapper
 					each accessories in accessoriesList
 						li.product-box.card.swiper-slide
-								a(href=accessories.link).product-box-img
+								a(href="/products/details"  + accessories.link).product-box-img
 									img(src=accessories.img)
 								.card-body
-									a(href=accessories.link).card-title= accessories.title
-									a(href=accessories.link).card-text= accessories.price
+									a(href="/products/details"  + accessories.link).card-title= accessories.title
+									a(href="/products/details"  + accessories.link).card-text= accessories.price
 				//- Add pagination
 				.swiper-pagination
 				//- Add arrow
@@ -243,7 +236,7 @@ block content
 
 
 		script(src="/styles/product_slider.js")
-
+		script(src="/styles/make_current_page_link_red.js")
 
 
 

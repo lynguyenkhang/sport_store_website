@@ -1,0 +1,84 @@
+extends ../layouts/common
+
+block content
+
+
+	// trường hợp link dẫn đến 1 loại và hãng sp cụ thể như :
+	// vợt cầu lông yonex
+	div.d-none(id="thuong_hieu")= thuong_hieu
+	div.d-none(id="loai_phu_kien")= loai_phu_kien
+
+	.products-box.container
+		//- reuse from products-box
+		.products-box-intro
+			.products-box-link
+				a.home-page-link.pages-link(href="/") Trang chủ
+				span.material-icons.next-arrow.ml-0 navigate_next
+				a.products-page-link.pages-link(href="#no")= title
+		.product-page-container
+			.product-sort-container.col-3
+				// h3.loc-san-pham LỌC SẢN PHẨM
+				// p.vertical-bar-title= brand_title ? brand_title :  "THƯƠNG HIỆU"
+				.form-search
+					input.form-control.form-control-2(type="text", placeholder=placeholder ? placeholder : "Tìm Kiếm Sản Phẩm", name="name", id="form-control-2")
+					button.btn-search-2.p-0(onclick="change();")
+						span.material-icons.search-icon-2 search
+				p.vertical-bar-title THƯƠNG HIỆU
+				ul.brandsList(id="brandsList")
+					each brand in brands
+						li
+							.mb-0
+								input(type="checkbox", id=brand, rel=brand, onchange="change();")
+								label(for=brand)= brand
+
+				.horizontal-line
+
+				p.vertical-bar-title GIÁ SẢN PHẨM
+				ul.brandsList(id="productsList")
+						li
+							input(type="checkbox", id="sm_500", , onchange="change();" ,rel="Giá dưới 500.000đ" )
+							label(for="sm_<500") Giá dưới 500.000đ
+
+						li
+							input(type="checkbox", id="500_1000", , onchange="change();" ,rel="500.000đ - 1 triệu" )
+							label(for="500_1000") 500.000đ - 1 triệu
+
+
+
+						li
+							input(type="checkbox", id="1000_2000", , onchange="change();" ,rel="1 - 2 triệu" )
+							label(for="1000_2000") 1 - 2 triệu
+
+						li
+							input(type="checkbox", id="2000_3000", , onchange="change();" ,rel="2 - 3 triệu" )
+							label(for="2000_3000") 2 - 3 triệu
+
+						li
+							input(type="checkbox", id="lg_3000", , onchange="change();" ,rel="Giá trên 3 triệu" )
+							label(for="lg_3000") Giá trên 3 triệu
+
+			h2.products-box-title Tất cả sản phẩm
+
+
+			// reuse from index.pug
+			.products-box-show.products-box-show-type
+				//- reuse from products-slider component
+				each product in productList
+					li.product-box.card.all-products-box(class=product.brand, class=product.price, id=product.title)
+							a(href="details/" + product.link).product-box-img
+								img(src=product.img)
+							.card-body.mb-3
+								a(href="details/" + product.link).card-title= product.title
+								a(href="details/" + product.link).card-text= product.price
+
+
+	script(src="/type_product.js")
+
+
+
+
+
+
+
+
+

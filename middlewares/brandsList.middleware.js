@@ -51,8 +51,8 @@ module.exports.list = async function(req, res, next){
 	res.locals.tuiBrands = brands[5].brands;
 	res.locals.tuiBrands_sp = brands[5].brands.slice(0, 5);
 
-	res.locals.bagBrands = brands[6].brands;
-	res.locals.bagBrands_sp = brands[6].brands.slice(0, 5);
+	res.locals.baloBrands = brands[6].brands;
+	res.locals.baloBrands_sp = brands[6].brands.slice(0, 5);
 
 	accessoriesBrands = brands[7].brands;
 	// console.log(convertVNese(accessoriesBrands[0]));
