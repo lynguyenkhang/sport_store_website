@@ -1,3 +1,42 @@
 extends ../layouts/common
 
 block content
+
+	.products-box.container
+		//- reuse from products-box
+		.products-box-intro
+			.products-box-link
+				a.home-page-link.pages-link(href="/") Trang chủ
+				span.material-icons.next-arrow.ml-0 navigate_next
+				a.home-page-link.pages-link(href="#no")= type_product
+				span.material-icons.next-arrow.ml-0 navigate_next
+				a.home-page-link.pages-link(href="#no")= brand_product
+				span.material-icons.next-arrow.ml-0 navigate_next
+				a.products-page-link.pages-link(href="#no")= title_product
+
+		.details-products-box
+			.details-products-img
+				img(src=img)
+			.details-products-content.col-6
+				.details-title.h1= title_product
+				ul.details-status
+					li
+						span.pr-3.mr-3 Tình trạng:
+						span(style="color: #73a91d;") Còn hàng
+					li
+						span.mr-3 Thương hiệu:
+						span= brand
+				.details-price
+					span.mr-2 Giá lẻ:
+					span.price= price
+
+				.details-buy
+					input.buy-number-box(type="input", name="quantity", value=1, id="quantity-box")
+					.buy-number-button
+						button(onclick="increaseNum();") +
+						button(onclick="decreaseNum();") -
+					a.details-buy-button.btn.btn-primary(id="btn_buy",href="/cart/add/" + id + "@1") MUA NGAY
+				.details-description
+			.details-products-support
+
+	script(src="/styles/details.js")

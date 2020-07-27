@@ -8,6 +8,7 @@ html
 		link(rel="stylesheet", href="/styles/product_slider.css")
 		link(rel="stylesheet", href="/styles/all_products.css")
 		link(rel="stylesheet", href="/styles/type_product.css")
+		link(rel="stylesheet", href="/styles/details_product.css")
 
 
 		//- ICON FONT
@@ -58,7 +59,7 @@ html
 
 				.cart-box
 					span.material-icons.cart-icon shopping_cart
-					.badge.badge-warning.badge-cart 0
+					.badge.badge-warning.badge-cart= numCart
 		.header-fluid.container-fluid
 			.header.container
 				.products-category-box.col-3

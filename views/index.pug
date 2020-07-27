@@ -197,11 +197,11 @@ block content
 				.swiper-wrapper
 					each balo in baloList
 						li.product-box.card.swiper-slide
-								a(href="/products/details" + balo.link).product-box-img
+								a(href="/products/details/" + balo.link).product-box-img
 									img(src=balo.img)
 								.card-body
-									a(href="/products/details" + balo.link).card-title= balo.title
-									a(href="/products/details" + balo.link).card-text= balo.price
+									a(href="/products/details/" + balo.link).card-title= balo.title
+									a(href="/products/details/" + balo.link).card-text= balo.price
 				//- Add pagination
 				.swiper-pagination
 				//- Add arrow
@@ -223,11 +223,11 @@ block content
 				.swiper-wrapper
 					each accessories in accessoriesList
 						li.product-box.card.swiper-slide
-								a(href="/products/details"  + accessories.link).product-box-img
+								a(href="/products/details/"  + accessories.link).product-box-img
 									img(src=accessories.img)
 								.card-body
-									a(href="/products/details"  + accessories.link).card-title= accessories.title
-									a(href="/products/details"  + accessories.link).card-text= accessories.price
+									a(href="/products/details/"  + accessories.link).card-title= accessories.title
+									a(href="/products/details/"  + accessories.link).card-text= accessories.price
 				//- Add pagination
 				.swiper-pagination
 				//- Add arrow

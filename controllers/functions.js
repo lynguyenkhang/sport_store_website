@@ -42,6 +42,35 @@ module.exports.translateProduct = function(product){
 	return result;
 }
 
+module.exports.translateProduct_2 = function(product){
+	var result;
+	switch(product){
+		case "racket":
+			result = "Vợt cầu lông"; break;
+		case "t_shirt":
+			result = "Áo cầu lông"; break;
+		case "shoes":
+			result = "Giày cầu lông"; break;
+		case "balo":
+			result = "Balo cầu lông"; break;
+		case "accessories":
+			result = "Phụ kiện cầu lông"; break;
+		case "pants":
+			result = "Quần cầu lông"; break;	
+		default:
+			result = "Error"; break;												
+	}
+	return result;
+}
+
+module.exports.toUpperFirstLetter = function(brand){
+	var result = brand[0].toUpperCase();
+	for(var i = 1; i < brand.length; i++){
+		result += brand[i];
+	}	
+	return result;
+}
+
 
 module.exports.removeWord = function(str, word){
 	while(str.indexOf(word) > -1){
