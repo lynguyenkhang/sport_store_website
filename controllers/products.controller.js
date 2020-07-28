@@ -230,7 +230,11 @@ module.exports.view = async function(req, res){
 
 
 module.exports.view_details = async function(req,res){
-	var product = await Products.findOne({ link : req.params.sp})
+	var product = await Products.findOne({ link : req.params.sp});
+	var productsList = await Products.find({
+		product: product.product,
+		brand: product.brand
+	});
 
 	var type_product = functions.translateProduct_2(product.product);
 	var upperBrand = functions.toUpperFirstLetter(product.brand);
@@ -238,13 +242,11 @@ module.exports.view_details = async function(req,res){
 	
 
 	res.render('products/details',{
-		type_product: type_product,
+		productsList: productsList,
+		type_product: type_product,		
 		brand_product: brand_product,
-		title_product: product.title,
-		brand: upperBrand,
-		price: product.price,
-		img: product.img,
-		id: product._id
+		product: product,
+		brand: upperBrand
 	});
 
 

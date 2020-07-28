@@ -60,6 +60,38 @@ html
 				.cart-box
 					span.material-icons.cart-icon shopping_cart
 					.badge.badge-warning.badge-cart= numCart
+					.list-cart-box(id="list_cart_box")
+						.gio-hang
+							.gio-hang-content
+								p.mb-0 Giỏ hàng
+								.text-muted(style="font-size: 13.5px;") 
+									span= "(" + cart.length + ") "
+									span Sản phẩm
+							.cart_btn_close.material-icons highlight_off
+						ul
+							each product_in_cart in cart
+								li
+									.list-cart-img-box
+										img(src=product_in_cart.img)
+									.list-cart-content
+										a.list-cart-content-title(href="/products/details/" + product_in_cart.link)= product_in_cart.title
+										.list-cart-content-price
+											span.text-muted(style="font-size: 13.5px;") Số lượng
+											span.product-in-cart-price= product_in_cart.price
+										.list-cart-content-quantity
+											button +
+											input.buy-number-box.buy-number-box-2(value= product_in_cart.quantity)
+											button -
+										a(href="#").list-cart-content-unchoose-product.text-primary Bỏ sản phẩm
+						.total-price
+							span Thành tiền
+							span(style="float: right;")= totalPrice
+							button.btn.btn-primary.btn-order Tiến hành đặt hàng
+
+
+
+
+
 		.header-fluid.container-fluid
 			.header.container
 				.products-category-box.col-3

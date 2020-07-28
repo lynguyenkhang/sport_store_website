@@ -65,3 +65,122 @@ body{
 	font-size: .8rem;
 }
 
+.cart-icon{
+	cursor: pointer;
+}
+
+.list-cart-box{
+	position: fixed;
+    right: -30vw;
+    top: 0px;
+    width: 30vw;
+    height: 100vh;
+    background: white;
+    z-index: 999;
+
+    transition: all 0.4s linear;
+}
+.move-right-to-hide{
+	right: -30vw !important;
+}
+	.gio-hang{
+		color: #222 !important;
+		display: flex;
+		padding: 15px 15px 30px 15px;
+	}
+
+		.cart_btn_close{
+			font-size: 40px !important;
+			margin-left: auto;
+			color: #999 !important;
+		    cursor: pointer;
+		    z-index: 1000;
+		}
+
+
+	.list-cart-box ul {
+		overflow: scroll;
+		height: 60%;
+		padding: 0px;
+		margin-bottom: 30px;
+	}	
+		.list-cart-box li:first-child{
+			padding-top: 0px;
+		}
+		.list-cart-box li {
+			display: flex;
+			padding: 15px;
+			border-bottom: 0.5px solid #eee;
+
+		}
+			.list-cart-img-box {
+				width: 99px;
+				height: 99px;
+				margin-right: 20px;
+			}
+				.list-cart-img-box img {
+					height: 100%;
+					width: 100%;
+				}
+			.list-cart-content{
+				flex-grow: 1;
+			}
+				.list-cart-content-title{
+					font-size: 14.5px;
+					text-decoration: none !important;
+					color: #222;
+					font-weight: 500;
+					display: block;
+					margin-bottom: 3px;
+				}
+
+				.list-cart-content-price{
+					color: black;
+					margin-bottom: 5px;
+				}	
+					.product-in-cart-price{
+						float: right;
+						padding-top: 5px;
+						font-size: 14px;
+						font-weight: bold;
+
+					}
+				.list-cart-content-quantity{
+					display: flex;
+
+				}
+					.list-cart-content-quantity button {
+						    font-size: 14px;
+						    line-height: 14px;
+						    height: 30px;
+						    width: 30px;
+						    border: 1px solid #ddd;
+						    background-color: #fff;
+	    				}
+	    			.buy-number-box-2 {
+						height: 30px !important;
+						border-left: 0px !important;
+						border-right: 0px !important;
+	    			}
+				.list-cart-content-unchoose-product{
+					color: #007BFF;
+					float: right;
+					font-size: 14px;
+				}
+	.total-price {
+		padding: 17px;
+		font-weight: 600;
+		color: #222;
+	}
+	.btn-order{
+		margin-top: 25px;
+		width: 100%;
+		display: block;
+	}
+
+
+
+
+
+
+

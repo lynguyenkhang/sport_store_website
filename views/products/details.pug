@@ -1,6 +1,8 @@
 extends ../layouts/common
 
 block content
+	link(rel="stylesheet", href="/styles/swiper.min.css")
+	script(src="/styles/swiper.min.js")
 
 	.products-box.container
 		//- reuse from products-box
@@ -8,17 +10,17 @@ block content
 			.products-box-link
 				a.home-page-link.pages-link(href="/") Trang chủ
 				span.material-icons.next-arrow.ml-0 navigate_next
-				a.home-page-link.pages-link(href="#no")= type_product
+				a.home-page-link.pages-link(href="/products/racket")= type_product
 				span.material-icons.next-arrow.ml-0 navigate_next
-				a.home-page-link.pages-link(href="#no")= brand_product
+				a.home-page-link.pages-link(href="/products/racket@" + brand)= brand_product
 				span.material-icons.next-arrow.ml-0 navigate_next
-				a.products-page-link.pages-link(href="#no")= title_product
+				a.products-page-link.pages-link(href="#no")= product.title
 
 		.details-products-box
 			.details-products-img
-				img(src=img)
+				img(src=product.img)
 			.details-products-content.col-6
-				.details-title.h1= title_product
+				.details-title.h1= product.title
 				ul.details-status
 					li
 						span.pr-3.mr-3 Tình trạng:
@@ -28,15 +30,44 @@ block content
 						span= brand
 				.details-price
 					span.mr-2 Giá lẻ:
-					span.price= price
+					span.price= product.price
 
 				.details-buy
 					input.buy-number-box(type="input", name="quantity", value=1, id="quantity-box")
 					.buy-number-button
 						button(onclick="increaseNum();") +
 						button(onclick="decreaseNum();") -
-					a.details-buy-button.btn.btn-primary(id="btn_buy",href="/cart/add/" + id + "@1") MUA NGAY
+					a.details-buy-button.btn.btn-primary(id="btn_buy",href="/cart/add/" + product._id + "@1") MUA NGAY
 				.details-description
 			.details-products-support
+				.support-content
+					p.help Bạn cần hỗ trợ?
+					a.phone-call(href="tel:+84795917691") 0795917691
+					p.time-work-box (08-17h, CN và chiều thứ 7 nghỉ)
+					a.lien-he(href="#") Liên Hệ
+				a.box-hotlines-right(href="tel:+84795917691")
+						span.material-icons.call-icons call
 
+
+		.product-slider.product-slider-details
+			p _____  Sản Phẩm Cùng Loại  _____
+
+			//- swiper
+			ul.product-lists.swiper-container
+				.swiper-wrapper
+					each item in productsList
+						li.product-box.card.swiper-slide.swiper-slide-details
+								a(href="/products/details/" + item.link).product-box-img
+									img(src=item.img)
+								.card-body-details
+									a(href="/products/details/" + item.link).card-title= item.title
+									a(href="/products/details/" + item.link).card-text= item.price
+				//- Add pagination
+				.swiper-pagination.d-none
+				//- Add arrow
+				.swiper-button-next.swiper-button-next-details
+				.swiper-button-prev.swiper-button-next-details
+
+
+	script(src="/styles/product_slider_details.js")
 	script(src="/styles/details.js")

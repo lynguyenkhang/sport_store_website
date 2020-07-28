@@ -79,3 +79,22 @@ module.exports.removeWord = function(str, word){
 
 	return str;
 }
+
+module.exports.addVND = function(str){
+	var result = ''
+	for(var i = 1 ; i <= str.length ; i++){
+		var index = str.length - i;
+		if(( i == 4) || (i == 7)) {
+			result = str[index] + '.' + result;
+		} else {
+			result = str[index] + result;
+		}
+	}
+	result = result + ' ₫';
+	return result;
+}
+
+
+
+
+
