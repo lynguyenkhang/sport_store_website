@@ -16,21 +16,26 @@ app.set('view engine', 'pug');
 app.set('views', './views');
 app.use(express.static	('publics'));
 
+app.use(bodyParser.json()); // for parsing application/json
+app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
+
 var secretCookie = "admnadsn@##@7a";
 app.use(cookieParser(secretCookie));
-
 
 // middlewares
 var sessionMiddleware = require('./middlewares/session.middleware.js');
 var brandsMiddleware = require('./middlewares/brandsList.middleware.js');
 var productMiddleware = require('./middlewares/products.middleware.js');
-app.use(brandsMiddleware.list);
 
+// routes:
 var productsRoute = require('./routes/products.route.js');
 var cartRoute = require('./routes/cart.route.js');
+var apiProductsInCartRoute = require('./api/routes/productsInCart.route.js');
 
 
+app.use(brandsMiddleware.list);
 app.use(sessionMiddleware);
+app.use('/api/productsInCart', apiProductsInCartRoute);
 app.get('/', productMiddleware.load,function(req,res,next){
 	// console.log(req.products[0]);
 

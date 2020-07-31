@@ -104,17 +104,5 @@ $(document).ready(function(){
 		$(".san-pham-box").hide();
 	})
 
-	//CART BOX
-		$(".cart_btn_close").click(function(){
-			console.log("okay");
-			$("#list_cart_box").attr("style", "right: -30vw;");
-		})
-
-		$(".cart-icon").click(function(){
-			console.log("okay");
-			$("#list_cart_box").attr("style", "right: 0vw;");
-		})
-
-
 
 });

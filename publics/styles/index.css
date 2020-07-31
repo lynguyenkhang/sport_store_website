@@ -78,7 +78,7 @@ body{
     background: white;
     z-index: 999;
 
-    transition: all 0.4s linear;
+    transition: all 0.5s;
 }
 .move-right-to-hide{
 	right: -30vw !important;

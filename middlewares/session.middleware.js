@@ -29,7 +29,7 @@ module.exports = async function(req, res, next){
 				var priceStr = item[0].price.slice(0, end);
 				priceStr = functions.removeWord(priceStr,'.');
 				var price = parseInt(priceStr);
-				totalPrice += price;
+				totalPrice += (price * cart[product]);
 			}
 		}
 		totalPrice = JSON.stringify(totalPrice);
@@ -37,6 +37,7 @@ module.exports = async function(req, res, next){
 		res.locals.totalPrice = totalPrice;
 		res.locals.cart = productsInCart;
 		res.locals.numCart = numCart;
+		res.locals.sessionId = req.signedCookies.sessionId
 	}
 	next();
 }

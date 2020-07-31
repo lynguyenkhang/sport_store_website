@@ -19,6 +19,9 @@ html
 
 		script(src="https://code.jquery.com/jquery-3.5.0.js")
 		script(src="/jquery/index.js")
+		//- AJAX
+		script(src="https://unpkg.com/axios/dist/axios.min.js")
+		script(src="/jquery/productsInCart.js")
 	body
 		//- BOOTSTRAP
 		script(src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous")
@@ -65,12 +68,12 @@ html
 							.gio-hang-content
 								p.mb-0 Giỏ hàng
 								.text-muted(style="font-size: 13.5px;") 
-									span= "(" + cart.length + ") "
+									span= "(" + numCart + ") "
 									span Sản phẩm
 							.cart_btn_close.material-icons highlight_off
 						ul
 							each product_in_cart in cart
-								li
+								li.id-product-box(id= product_in_cart._id)
 									.list-cart-img-box
 										img(src=product_in_cart.img)
 									.list-cart-content
@@ -79,10 +82,13 @@ html
 											span.text-muted(style="font-size: 13.5px;") Số lượng
 											span.product-in-cart-price= product_in_cart.price
 										.list-cart-content-quantity
-											button +
+
+											button(onclick=`increaseQuantity('${sessionId}','${product_in_cart._id}', '${product_in_cart.price}')`) +
+
 											input.buy-number-box.buy-number-box-2(value= product_in_cart.quantity)
-											button -
-										a(href="#").list-cart-content-unchoose-product.text-primary Bỏ sản phẩm
+
+											button(onclick=`decreaseQuantity('${sessionId}','${product_in_cart._id}', '${product_in_cart.price}')`) -
+										a(href="#no", onclick=`deleteProduct('${sessionId}','${product_in_cart._id}', '${product_in_cart.price}')`).list-cart-content-unchoose-product.text-primary Bỏ sản phẩm
 						.total-price
 							span Thành tiền
 							span(style="float: right;")= totalPrice
