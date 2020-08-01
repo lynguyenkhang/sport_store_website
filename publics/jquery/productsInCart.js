@@ -135,7 +135,12 @@ function deleteProduct(sessionId, productId, priceStr){
 	// Giỏ hàng title (tổng só sản phẩm)
 	var gio_hang = document.querySelector(".gio-hang-content");
 	var gio_hang_number = gio_hang.querySelector("span");
-	var currentNumber = JSON.parse(gio_hang_number.innerText[1]) - quantity;
+	var begin = gio_hang_number.innerText.indexOf("(") + 1;
+	var end = gio_hang_number.innerText.indexOf(")");
+
+
+
+	var currentNumber = JSON.parse(gio_hang_number.innerText.slice(begin, end)) - quantity;
 
 
 	axios({
@@ -168,10 +173,13 @@ function crawlProductsInCart() {
 
 	var cart = {};
 	for(var i = 0; i < idProductElement.length; i++){
-		var id = idProductElement[i].id;
-		var quantity = quantityProductElement[i].value;
-		quantity = JSON.parse(quantity);
-		cart[`${id}`] = quantity;
+
+		if(idProductElement[i].style.display != "none"){
+			var id = idProductElement[i].id;
+			var quantity = quantityProductElement[i].value;
+			quantity = JSON.parse(quantity);
+			cart[`${id}`] = quantity;
+		}
 	}
 	// console.log(cart);
 	return cart;
