@@ -3,11 +3,13 @@ var Cart = require('../models/cart.model.js');
 var Products = require('../models/products.model.js'); 
 var functions = require('../controllers/functions.js');
 
-module.exports = async function(req, res, next){
+module.exports.sessionId = async function(req, res, next){
 	if(!req.signedCookies.sessionId){
 		res.cookie('sessionId', shortid.generate(), {
 			signed: true
 		});
+		res.redirect('/');
+		return;
 	} else {
 		// show quantity of products in cart
 		var sessionId = req.signedCookies.sessionId;

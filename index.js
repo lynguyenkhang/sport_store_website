@@ -32,9 +32,8 @@ var productsRoute = require('./routes/products.route.js');
 var cartRoute = require('./routes/cart.route.js');
 var apiProductsInCartRoute = require('./api/routes/productsInCart.route.js');
 
-
+app.use(sessionMiddleware.sessionId);
 app.use(brandsMiddleware.list);
-app.use(sessionMiddleware);
 app.use('/api/productsInCart', apiProductsInCartRoute);
 app.get('/', productMiddleware.load,function(req,res,next){
 	// console.log(req.products[0]);
