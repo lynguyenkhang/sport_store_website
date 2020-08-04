@@ -1,0 +1,89 @@
+.gio-hang-page-box{
+	display: flex;
+}
+
+		.gio-hang-page-product-title{
+		    font-size: 16px;
+		    margin-bottom: 15px;
+		}
+		.gio-hang-page-list{
+			list-style-type: none;
+			padding: 0px;
+			margin-right: 35px;
+		}
+			.gio-hang-page-list li:last-child{
+				margin-bottom: 0px !important;
+				border-bottom: 0px !important;
+			}
+			.gio-hang-page-item-box {
+				display: flex;
+				padding-bottom: 20px;
+				border-bottom: 1px solid #ddd;
+				margin-bottom: 20px;
+			}
+				.gio-hang-page-item-img{
+					width: 180px;
+					height: 180px;
+					margin-right: 25px;
+				}
+					.gio-hang-page-item-img img {
+						width: 100%;
+						height: 100%;
+					}
+
+				.gio-hang-page-item-title{
+					width: 350px;
+					margin-right: 25px;
+				}
+					.font-title-14-size{
+						font-size: 14px !important;
+						font-weight: 300;
+						text-decoration: none !important;
+					}
+				.gio-hang-page-item-price{
+					color: red;
+					font-size: 1rem;
+					font-weight: 400;
+					margin-right: 25px;
+					width: 100px;
+				}
+	.gio-hang-page-button{
+		/*border: 1px solid black;*/
+		padding: 0px;
+		padding-top: 40px;
+	}
+		.gio-hang-page-button-thanh-tien{
+			font-size: 14px;
+			margin: 0px;
+		}
+		.gio-hang-page-button-totalPrice{
+			text-align: right;
+			font-size: 22px;
+			font-weight: 700;
+			color: #007bff;
+			line-height: 22px;
+		    padding-right: 20px;
+		    margin-bottom: 10px;	
+		}
+		.gio-hang-page-button a{
+			width: 100%;
+			font-size: 14px;
+			margin: 5px 0px;
+			padding: .44rem .75rem !important;
+		}
+		.btn-outline-primary:hover {
+			color: #1468c1 !important;
+			background-color: rgba(0,0,0,0);
+		}
+		.small-note {
+			float: right;
+		    margin-bottom: 10px;
+		}
+
+
+
+
+
+
+
+

@@ -95,6 +95,8 @@ module.exports.addVND = function(str){
 }
 
 
-
+module.exports.isEmpty = function(obj) {
+    return Object.keys(obj).length === 0;
+}
 
 

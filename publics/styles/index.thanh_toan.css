@@ -1,0 +1,256 @@
+
+.container-alert{
+	margin: 0px;
+	padding: 0px;
+	width: 40%;
+}
+	.alert-error{
+		font-size: 15px;
+		padding: .3rem 1.25rem;
+		margin-bottom: .7rem;
+	}
+
+
+.thanh-toan{
+	display: flex;
+	width: 100%;
+	height: 100%;
+}
+
+	.thanh-toan-box{
+		/* margin-left: 30px; */
+		padding-right: 35px;
+		padding-left: 80px;
+	}
+
+		.name-store{
+			color: #1f9cd0;
+			text-decoration: none !important;
+			font-weight: 400;
+			padding: 15px 0px;
+			margin-bottom: 0px;
+		}
+
+			.thanh-toan-box-child-1{
+				width: 50%;
+				padding-right: 20px;
+			}
+				.size-14px{
+					font-size: 14px !important;
+				}
+				.buyer-info{
+					font-weight: 700;
+					font-size: 1.15rem;
+					margin-bottom: .8rem;
+				}
+
+
+			.thanh-toan-box-child-2{
+				width: 50%;
+				padding-left: 20px;
+			}
+				.payment-box{
+				    border-radius: 10px;
+				    border: 1px solid #ddd;
+				    padding: 10px 20px;
+				}
+
+					.thanh-toan-checkbox-container {
+					    display: flex;
+					    align-items: center;
+
+						position: relative;
+						padding-left: 30px;
+						margin: 6px 0px;
+						cursor: pointer;
+						font-size: 14px;
+						color: #495057;
+						-webkit-user-select: none;
+						-moz-user-select: none;
+						-ms-user-select: none;
+						user-select: none;
+					}
+
+						.thanh-toan-checkbox-container input {
+							position: absolute;
+							opacity: 0;
+							cursor: pointer;
+						}
+
+						.checkmark {
+							position: absolute;
+							top: 2.5px;
+							left: 0;
+							height: 20px;
+							width: 20px;
+							background-color: #eee;
+							border-radius: 50%;
+							transition: all 0.3s linear;
+						}
+						.thanh-toan-checkbox-container:hover input ~ .checkmark {
+						  background-color: #ccc;
+						}
+
+						.thanh-toan-checkbox-container input:checked ~ .checkmark {
+						  background-color: #3687af;
+						}
+
+
+						.checkmark:after {
+							content: "";
+							position: absolute;
+							display: none;
+						  
+							top: 7px;
+							left: 7px;
+							width: 6px;
+							height: 6px;
+							border-radius: 50%;
+							background: white;
+							transition: all 0.3s linear;
+						}
+
+						.thanh-toan-checkbox-container input:checked ~ .checkmark:after {
+						  display: block;
+						}
+
+						.payment-icons{
+							color: #3687af;
+							margin-left: auto;
+							margin-right: 10px;
+							font-size: 30px !important;
+
+						}
+
+					.show_payment2_description{
+						padding-left: 30px;
+						display: none;
+					}
+					.show{
+						display: block;
+					}
+						p.mb-0{
+							font-size: 13.5px;
+							font-style: italic;
+						}
+
+
+	.gio-hang-box{
+		border-left: 1px solid black;
+		padding: 0px;
+	}
+		.gio-hang-box p:first-child{
+			font-weight: 700;
+		    font-size: 1.15rem;
+		    margin-bottom: .8rem;
+		    padding: 20px 30px;
+		    border-bottom: 1px solid #ddd;
+		}
+		.gio-hang-box ul {
+			padding: 5px 80px 0px 30px !important;
+		    overflow: scroll;
+		    height: 300px;
+		    padding-bottom: .8rem;
+		    margin-bottom: .8rem;
+		    border-bottom: 1px solid #ddd;
+    		}
+			.sp-trong-gio-hang-img{
+				width: 50px;
+				height: 50px;
+				border-radius: 5px;
+				border: 1px solid #ddd;
+				position: relative;
+					margin-right: 15px;
+			}
+				.sp-trong-gio-hang-img img {
+					width: 100%;
+					height: 100%;
+					border-radius: 5px;
+				}
+				.sl-sp-trong-gio-hang{
+					font-size: 11px;
+					color: #eee;
+					font-weight: 600;
+					background-color: #5a96c8;
+					position: absolute;
+					width: 20px;
+					height: 20px;
+					top: -6px;
+					right: -8px;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					border-radius: 50%;
+				}
+				.sp-trong-gio-hang-content{
+					font-size: 14px;
+					width: 200px;
+					margin-right: 20px;
+				}
+				.sp-trong-gio-hang-price{
+					font-size: 14px;
+					width: max-content;
+					display: flex;
+					align-items: center;
+				}
+
+		.sp-trong-gio-hang-totalPrice-box{
+			padding: 0px 80px 0px 30px;
+			color: #6c757d!important;
+		}
+			.sp-trong-gio-hang-totalPrice-box span:first-child{
+				font-size: 14px;
+			}
+
+			.sp-trong-gio-hang-totalPrice-box span:last-child{
+				font-size: 1.2rem;
+				font-weight: 600;
+			}
+		.sp-trong-gio-hang-button{
+			    width: 100%;
+			    vertical-align: center;
+			    padding: 15px 80px 0px 30px;
+			    display: flex;
+			    align-items: center;
+			    justify-content: space-between;
+			    margin-bottom: 10px;
+		}
+			.sp-trong-gio-hang-button a {
+				text-decoration: none !important;
+				position: relative;
+				margin-left: 14px;
+			}
+			.sp-trong-gio-hang-button a:hover .arrow_back_ios{
+				left: -20px;
+			}
+				.arrow_back_ios {
+				    font-size: 13px !important;
+				    vertical-align: middle;
+				    transition: all 0.3s linear;
+				    position: absolute;
+				    left: -12px;
+				    top: 3.7px;
+				}
+			.btn-dat-hang{
+				float: right;
+				padding: 5px 25px;
+			}
+
+		.sp-trong-gio-hang-notes{
+			padding: 0px 80px 0px 30px;
+		}
+			.sp-trong-gio-hang-notes p {
+				padding: 0px !important;
+				margin-bottom: 5px !important;
+				font-size: 13px !important;
+				color: #6C757D !important;
+				font-weight: 400 !important;
+				font-style: italic !important;
+				border: 0px !important;
+			}
+
+
+
+
+
+

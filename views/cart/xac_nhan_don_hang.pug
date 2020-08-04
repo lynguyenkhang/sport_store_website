@@ -1,0 +1,21 @@
+extends ../layouts/common
+
+block content
+	.products-box.container
+		//- reuse from products-box
+		.products-box-intro
+			.products-box-link
+				a.home-page-link.pages-link(href="/") Trang chủ
+				span.material-icons.next-arrow.ml-0 navigate_next
+				a.home-page-link.pages-link.text-primary(href="#") Đặt hàng
+
+		h1.mb-3 Thông báo
+		p.mb-2.thanh-toan-content
+			span Đơn hàng của quý khách đã được đặt thành công. Mã đơn hàng của quý khách là 
+			span [
+			span.orderId= orderId
+			span ]
+		p.mb-3.thanh-toan-content - Thời gian xử lý đơn hàng: Từ 8h30 - 17h30, thứ 2 đến thứ 6 và 8h30 - 12h30 thứ 7 hàng tuần. Các đơn hàng sau thời gian này sẽ được xử lý hôm sau.
+		.black-link-box
+			a(href="/").btn.btn-dark.mr-2.trang-chu-box Trang chủ
+			a(href="#").btn.btn-dark.xem-don-hang-box Xem đơn hàng

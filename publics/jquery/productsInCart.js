@@ -28,6 +28,12 @@ function increaseQuantity(sessionId, productId, priceStr){
 	var input = element.querySelector("input");
 	var quantity = JSON.parse(input.value) + 1;
 
+	// change html in gio-hang page
+	var element_gh =  document.getElementById(`${productId}_gh`);
+	if(element_gh){
+		var input_gh = element_gh.querySelector("input");
+	};
+
 	// badge-cart
 	var badge_cart = document.querySelector(".badge-cart");
 
@@ -58,6 +64,7 @@ function increaseQuantity(sessionId, productId, priceStr){
 		badge_cart.innerText = `${currentNumber}`;
 		gio_hang_number.innerText = `(${currentNumber}) `;
 		input.value = quantity;
+		if(input_gh){ input_gh.value = quantity;};
 		totalPriceElement.innerText = newPrice;		
 	}).catch(function(err){
 		console.log(err);
@@ -71,6 +78,12 @@ function decreaseQuantity(sessionId, productId, priceStr){
 	var element = document.getElementById(productId);
 	var input = element.querySelector("input");
 	var quantity = JSON.parse(input.value) - 1;
+
+	// change html in gio-hang page
+	var element_gh =  document.getElementById(`${productId}_gh`);
+	if(element_gh){
+		var input_gh = element_gh.querySelector("input");
+	};
 
 	// badge-cart
 	var badge_cart = document.querySelector(".badge-cart");
@@ -105,6 +118,7 @@ function decreaseQuantity(sessionId, productId, priceStr){
 			badge_cart.innerText = `${currentNumber}`;
 			gio_hang_number.innerText = `(${currentNumber}) `;
 			input.value = quantity;
+			if(input_gh){ input_gh.value = quantity;};
 			totalPriceElement.innerText = newPrice;
 		}).catch(function(err){
 			console.log(err);
@@ -116,6 +130,7 @@ function decreaseQuantity(sessionId, productId, priceStr){
 
 function deleteProduct(sessionId, productId, priceStr){
 	var element = document.getElementById(productId);
+	var element_gh = document.getElementById(`${productId}_gh`);
 	var badge_cart = document.querySelector(".badge-cart");
 
 	//crawl "cart" objective
@@ -150,6 +165,7 @@ function deleteProduct(sessionId, productId, priceStr){
 	}).then(function(res){
 		// change value in html
 		element.setAttribute("style", "display: none;");
+		if(element_gh) { element_gh.setAttribute("style", "display: none;"); };
 		badge_cart.innerText = `${currentNumber}`;
 		gio_hang_number.innerText = `(${currentNumber}) `;
 		totalPriceElement.innerText = newPrice;

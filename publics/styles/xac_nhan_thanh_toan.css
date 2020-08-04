@@ -1,0 +1,10 @@
+.black-link-box {
+	display: flex;
+}
+	.thanh-toan-content{
+		font-size: 14px;
+	}
+	.orderId{
+		font-weight: 700;
+		font-style: italic;
+	}

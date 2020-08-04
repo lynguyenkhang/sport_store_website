@@ -1,0 +1,97 @@
+html
+	head
+		title YONEX - BADMINTON
+		link(href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css", rel="stylesheet")
+		link(rel="stylesheet", href="/styles/index.thanh_toan.css")
+
+
+
+		//- ICON FONT
+		link(href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet")
+
+		//- jQuery
+
+		script(src="https://code.jquery.com/jquery-3.5.0.js")
+		script(src="/jquery/index.js")
+		script(src="/styles/thanh_toan.js")
+		//- AJAX
+		script(src="https://unpkg.com/axios/dist/axios.min.js")
+		script(src="/jquery/productsInCart.js")
+	body
+		//- BOOTSTRAP
+		script(src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous")
+		script(src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous")
+		script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous")
+
+
+		form.thanh-toan(method="post")
+			.thanh-toan-box.col-8
+				h1.name-store ABC Store
+				.thanh-toan-box-child.d-flex
+					.thanh-toan-box-child-1
+
+						p.buyer-info Thông tin nhận hàng
+						.form-group
+							input#fullName.form-control.size-14px(placeholder="Họ và tên người nhận", type="text", value= fullName ? fullName : '' , name="fullName")
+
+						.form-group
+							input#phoneNumber.form-control.size-14px(placeholder="Số điện thoại", type="text", value= phoneNumber ? phoneNumber : '' , name="phoneNumber")
+
+						.form-group
+							input#address.form-control.size-14px(placeholder="Địa chỉ", type="text", value= address ? address : '' , name="address")
+
+						.form-group
+							input#email.form-control.size-14px(placeholder="Email", type="text", value= email ? email : '' , name="email")
+
+
+
+					.thanh-toan-box-child-2.text-muted
+						p.buyer-info Thanh toán
+						.payment-box
+							label.thanh-toan-checkbox-container(onclick="hide_payment2_description();") Thanh toán khi nhận hàng COD
+								input#input_method_1(type="radio", checked="checked", name="payment_method_COD")
+								span.checkmark
+								span.material-icons.payment-icons local_atm
+
+							label.thanh-toan-checkbox-container(onclick="show_payment2_description();") Thanh toán qua ngân hàng 
+								input#input_method_2(type="radio", name="payment_method_bank")
+								span.checkmark
+								span.material-icons.payment-icons account_balance
+							.show_payment2_description
+								p.mb-0 Ngân hàng abcBank CN Hùng Vương
+								p.mb-0 Số TK: 0123456789
+								p.mb-0 Chủ TK: Nguyễn Văn ABC
+				if(errors)
+					.container-alert
+						each error in errors
+							.alert.alert-danger.alert-error= error
+			.gio-hang-box.col-4
+				p= "Đơn hàng (" + numCart + " sản phẩm)"
+				ul
+					each product_in_cart in cart
+						li.d-flex.mb-3
+							.sp-trong-gio-hang-img
+								img(src=product_in_cart.img)
+								.sl-sp-trong-gio-hang= product_in_cart.quantity
+							.sp-trong-gio-hang-content= product_in_cart.title
+							.sp-trong-gio-hang-price=  product_in_cart.price
+				.sp-trong-gio-hang-totalPrice-box
+					span Tổng cộng
+					span(style="float: right;")= totalPrice
+					input.d-none(type="text", value= totalPrice, name="totalPrice")
+
+
+				.sp-trong-gio-hang-button
+					a(href="/cart")
+						span.material-icons.arrow_back_ios arrow_back_ios
+						span(style="font-size: 14px;") Quay về giỏ hàng
+					button.btn.btn-primary.btn-dat-hang ĐẶT HÀNG
+				.sp-trong-gio-hang-notes
+					p - Giá trên chưa bao gồm phí vận chuyển. Phí vận chuyển sẽ được nhân viên báo khi xác nhận đơn hàng.
+					p - Thời gian xử lý đơn hàng: Từ 8h30- 17h30 Thứ 2 đến thứ 6 và 8h30-12h30 Thứ 7. Các đơn hàng sau thời gian này sẽ được xử lý vào ngày làm việc tiếp theo.
+
+
+
+
+

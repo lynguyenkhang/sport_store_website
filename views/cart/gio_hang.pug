@@ -1,0 +1,59 @@
+extends ../layouts/common
+
+block content
+	.products-box.container
+		//- reuse from products-box
+		.products-box-intro
+			.products-box-link
+				a.home-page-link.pages-link(href="/") Trang chủ
+				span.material-icons.next-arrow.ml-0 navigate_next
+				a.home-page-link.pages-link.text-primary(href="#") Giỏ hàng
+		.gio-hang-page-box
+			.gio-hang-page-product-box.p-0.col-9
+				.gio-hang-page-product-title
+					span GIỎ HÀNG 
+					span= "(" + numCart
+					span  sản phẩm)
+				ul.gio-hang-page-list
+					each product_in_cart in cart
+						li.gio-hang-page-item-box(id= `${product_in_cart._id}_gh`)
+
+							.gio-hang-page-item-img
+								img(src= product_in_cart.img)
+
+
+							.gio-hang-page-item-title
+								a.font-title-14-size.list-cart-content-title(href="/products/details/" + product_in_cart.link)= product_in_cart.title
+
+								a.font-title-14-size(href="#no", onclick=`deleteProduct('${sessionId}','${product_in_cart._id}', '${product_in_cart.price}')`).text-primary Xoá
+
+
+							.gio-hang-page-item-price= product_in_cart.price
+
+
+							.gio-hang-page-item-button.list-cart-content-quantity
+								button(onclick=`increaseQuantity('${sessionId}','${product_in_cart._id}', '${product_in_cart.price}')`) +
+
+								input.buy-number-box.buy-number-box-2(value= product_in_cart.quantity)
+
+								button(onclick=`decreaseQuantity('${sessionId}','${product_in_cart._id}', '${product_in_cart.price}')`) -
+
+
+
+
+
+
+
+			.gio-hang-page-button.col-3
+				p.gio-hang-page-button-thanh-tien Thành tiền:
+				p.gio-hang-page-button-totalPrice= totalPrice
+				small.small-note (Chưa bao gồm phí vận chuyển)
+				a.btn.btn-primary(style="color: white;", href="/cart/thanh_toan") Thanh toán ngay
+				a.btn.btn-outline-primary(style="color: #007bff;", href="/") Tiếp tục mua hàng
+
+
+
+
+
+
+
