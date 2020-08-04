@@ -34,6 +34,7 @@ module.exports.search = async function(req,res){
 	var name = query_name.toLowerCase();
 	var query_type = req.query.type;
 
+
 	type = functions.translateProduct(query_type);
 
 	var brand = req.query.brand;
@@ -143,7 +144,7 @@ module.exports.search = async function(req,res){
 			paginationNumber: paginationNumber,
 			// để phân biệt pagination trang products với search
 			page: pageURL,
-			placeholder: query_name
+			name_value: query_name
 		})
 }
 

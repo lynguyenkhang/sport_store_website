@@ -12,7 +12,7 @@ block content
 
 
 		form.search-bar(action="/products/search", method="GET")
-			input.form-control(type="text", placeholder=placeholder ? placeholder : "Nhập tên sản phẩm", name="name")
+			input.form-control(type="text", value= name_value ? name_value : '', placeholder="Nhập tên sản phẩm", name="name")
 			select.form-control(name="type")
 				option Tất cả
 				option Vợt cầu lông
