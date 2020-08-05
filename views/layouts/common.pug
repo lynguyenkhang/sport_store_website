@@ -73,7 +73,7 @@ html
 									span= "(" + numCart + ") "
 									span Sản phẩm
 							.cart_btn_close.material-icons highlight_off
-						ul
+						ul(id="productsListInCart")
 							each product_in_cart in cart
 								li.id-product-box(id= product_in_cart._id)
 									.list-cart-img-box

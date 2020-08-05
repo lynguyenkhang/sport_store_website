@@ -37,7 +37,10 @@ block content
 					.buy-number-button
 						button(onclick="increaseNum();") +
 						button(onclick="decreaseNum();") -
-					a.details-buy-button.btn.btn-primary(id="btn_buy",href="/cart/add/" + product._id + "@1") MUA NGAY
+					// a.details-buy-button.btn.btn-primary(id="btn_buy",href="/cart/add/" + product._id + "@1") MUA NGAY
+					button.details-buy-button.btn.btn-primary(id="btn_buy", onclick=`buyProduct('${sessionId}','${product._id}', '${product.link}')`) MUA NGAY
+
+
 				.details-description
 			.details-products-support
 				.support-content
