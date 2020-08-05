@@ -28,6 +28,7 @@ function buyProduct(sessionId, productId, product_link){
 	quantity = JSON.parse(quantity);
 	var img_link = document.querySelector(".details-products-img > img").src;
 	var priceStr = document.querySelector(".details-price > .price").innerText;
+
 	// badge-cart
 	var badge_cart = document.querySelector(".badge-cart");
 
@@ -62,7 +63,6 @@ function buyProduct(sessionId, productId, product_link){
 		productsListInCart.innerHTML += content;
 	}
 
-	alert("Khách hàng mua hàng thành công.");
 	axios({
 		method: 'patch',
 		url: `/api/productsInCart/${sessionId}`,
@@ -73,7 +73,7 @@ function buyProduct(sessionId, productId, product_link){
 		totalPriceElement.innerText = newPrice;
 	})
 
-	console.log('test');
+	alert("Khách hàng mua hàng thành công.");
 }
 
 
@@ -242,7 +242,7 @@ function deleteProduct(sessionId, productId, priceStr){
 		data: cart
 	}).then(function(res){
 		// change value in html
-		element.setAttribute("style", "display: none;");
+		element.remove();
 		if(element_gh) {
 			element_gh.setAttribute("style", "display: none;"); 
 			gio_hang_number_gh.innerText = `(${currentNumber}`;
