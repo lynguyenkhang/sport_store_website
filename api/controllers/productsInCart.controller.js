@@ -14,19 +14,22 @@ module.exports.getOneCart = async function(req, res){
 module.exports.updateOneCart = async function(req,res){
 	var sessionId = req.params.sessionId;
 	var changes = req.body;
-	await Cart.updateOne({ sessionId: sessionId}, {
-		cart: changes
-	})
-	console.log(`cart with sessionId: ${sessionId} is updated `);
+
+	var this_session = await Cart.find({ sessionId: sessionId});
+	if(!this_session.length){
+		await Cart.insertMany({
+			sessionId: sessionId,
+			cart: changes
+		})
+		console.log(`a new cart with sessionId: ${sessionId} is created`);
+	} else {
+		await Cart.updateOne({ sessionId: sessionId}, {
+			cart: changes
+		})
+		console.log(`cart with sessionId: ${sessionId} is updated `);
+	}
+
 	var cart = await Cart.find({ sessionId: sessionId});
 	res.json(cart);
 }
 
-
-
-// module.exports.deleteOneSession = async function(req, res){
-// 	var sessionId = req.params.sessionId;
-// 	await Cart.deleteOne({ sessionId: sessionId});
-// 	console.log(`cart with sessionId: ${sessionId} is deleted `);
-// 	res.json(cart);
-// }
