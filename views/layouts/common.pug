@@ -11,7 +11,7 @@ html
 		link(rel="stylesheet", href="/styles/details_product.css")
 		link(rel="stylesheet", href="/styles/xac_nhan_thanh_toan.css")
 		link(rel="stylesheet", href="/styles/gio_hang.css")
-
+		link(rel="stylesheet", href="/styles/autocomplete.css")
 
 
 		//- ICON FONT
@@ -22,9 +22,11 @@ html
 
 		script(src="https://code.jquery.com/jquery-3.5.0.js")
 		script(src="/jquery/index.js")
+
 		//- AJAX
 		script(src="https://unpkg.com/axios/dist/axios.min.js")
 		script(src="/jquery/productsInCart.js")
+
 	body
 		//- BOOTSTRAP
 		script(src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous")
@@ -37,11 +39,28 @@ html
 			.container.d-flex
 				.logo-box.col-3
 				.search-box.col-5
-					form.form-search-box(action="#", method="GET")
-						input.search-box-input.form-control(type="text",name="searchedUsers",placeholder=keyword)
+					form.form-search-box(action="products/search", method="GET", autocomplete="off")
+						.autocomplete
+							input.search-box-input.form-control(type="text",name="name", id="myInput",placeholder=keyword)
+							//- add "type", "brand", "price" varible in
+							//- order to be similar as search() fn in product routes
+
+							.select-box.d-none
+								select.form-control(name="type")
+									option Tất cả
+								select.form-control(name="brand")
+									option Tất cả
+								select.form-control(name="price")
+									option Tất cả
 
 						button.btn-search.p-0
 							span.material-icons.search-icon search
+
+
+
+
+
+
 
 				.hotline-box.col-2
 					p.hotline Hotline:  0123123123
@@ -328,6 +347,7 @@ html
 
 		block content
 
+	script(src="/autocomplete.js")
 
 
 

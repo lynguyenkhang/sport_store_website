@@ -1,0 +1,66 @@
+
+
+/*the container must be positioned relative:*/
+.autocomplete {
+  position: relative;
+  display: flex;
+  width: 100%;
+}
+
+.autocomplete-items {
+    position: absolute;
+    border: 1px solid #d4d4d4;
+    border-bottom: none;
+    border-top: none;
+    z-index: 999;
+    top: 100%;
+    left: 0;
+    right: 0;
+    margin-left: 20px;
+    background-color: #ddd;
+}
+
+.autocomplete-items a {
+  padding: 7px;
+  cursor: pointer;
+  background-color: #fff; 
+  border-bottom: 1px solid #d4d4d4; 
+}
+
+/*when hovering an item:*/
+.autocomplete-items a:hover {
+  background-color: #e9e9e9; 
+}
+
+/*when navigating through the items using the arrow keys:*/
+.autocomplete-active {
+  background-color: #bdbdbd !important; 
+  color: #0056b3 !important; 
+}
+
+
+.item-link {
+  display: flex;
+  text-decoration: none !important;
+  color: black;
+  margin: 10px;
+  font-size: 13px;
+}
+
+.san-pham-goi-y{
+    margin: 5px 10px;
+    font-size: 14px;
+    display: block;
+    text-decoration: none !important;
+    color: #6c757d!important;
+  }
+
+.hinh-anh-sp {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+
+
+
+

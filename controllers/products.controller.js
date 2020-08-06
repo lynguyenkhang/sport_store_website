@@ -34,7 +34,6 @@ module.exports.search = async function(req,res){
 	var name = query_name.toLowerCase();
 	var query_type = req.query.type;
 
-
 	type = functions.translateProduct(query_type);
 
 	var brand = req.query.brand;
