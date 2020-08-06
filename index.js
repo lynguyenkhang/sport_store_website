@@ -31,10 +31,12 @@ var productMiddleware = require('./middlewares/products.middleware.js');
 var productsRoute = require('./routes/products.route.js');
 var cartRoute = require('./routes/cart.route.js');
 var apiProductsInCartRoute = require('./api/routes/productsInCart.route.js');
+var apiProductsRoute = require('./api/routes/products.route.js');
 
 app.use(sessionMiddleware.sessionId);
 app.use(brandsMiddleware.list);
 app.use('/api/productsInCart', apiProductsInCartRoute);
+app.use('/api/products', apiProductsRoute);
 app.get('/', productMiddleware.load,function(req,res,next){
 	// console.log(req.products[0]);
 
@@ -50,8 +52,6 @@ app.get('/', productMiddleware.load,function(req,res,next){
 
 app.use('/products',productsRoute);
 app.use('/cart', cartRoute);
-
-
 
 app.listen(port, function(req,res){
 	console.log('port ' + port + 'runiing...');
