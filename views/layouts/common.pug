@@ -1,6 +1,7 @@
 html
 	head
 		title YONEX - BADMINTON
+		meta(name="viewport" content="width=device-width, initial-scale=1.0")
 		link(href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css", rel="stylesheet")
 		link(rel="stylesheet", href="/styles/header.css")
 		link(rel="stylesheet", href="/styles/header_2.css")
@@ -61,59 +62,59 @@ html
 
 
 
+				.hotline-acount-cart-box.col-4
+					.hotline-box
+						p.hotline Hotline:  0123123123
+						p.khach-si-box
+							span.khach-si Khách sỉ:  
+							span 0312312312
+					.account-cart-box
+						.account-box
+							.account-box-content
+								//- reuse "hotline" class
+								p.hotline Tài khoản
+								p.khach-si Xin chào, Khách
 
-				.hotline-box.col-2
-					p.hotline Hotline:  0123123123
-					p.khach-si-box
-						span.khach-si Khách sỉ:  
-						span 0312312312
-
-				.account-box
-					.account-box-content
-						//- reuse "hotline" class
-						p.hotline Tài khoản
-						p.khach-si Xin chào, Khách
-
-					ul.sign-box
-						li
-							a.text-dark(href="#") Đăng nhập
-						li
-							a.text-dark(href="#") Đăng kí
+							ul.sign-box
+								li
+									a.text-dark(href="#") Đăng nhập
+								li
+									a.text-dark(href="#") Đăng kí
 
 
-				.cart-box
-					span.material-icons.cart-icon shopping_cart
-					.badge.badge-warning.badge-cart= numCart
-					.list-cart-box(id="list_cart_box")
-						.gio-hang
-							.gio-hang-content
-								p.mb-0 Giỏ hàng
-								.text-muted(style="font-size: 13.5px;") 
-									span= "(" + numCart + ") "
-									span Sản phẩm
-							.cart_btn_close.material-icons highlight_off
-						ul(id="productsListInCart")
-							each product_in_cart in cart
-								li.id-product-box(id= product_in_cart._id)
-									.list-cart-img-box
-										img(src=product_in_cart.img)
-									.list-cart-content
-										a.list-cart-content-title(href="/products/details/" + product_in_cart.link)= product_in_cart.title
-										.list-cart-content-price
-											span.text-muted(style="font-size: 13.5px;") Số lượng
-											span.product-in-cart-price= product_in_cart.price
-										.list-cart-content-quantity
+						.cart-box
+							span.material-icons.cart-icon shopping_cart
+							.badge.badge-warning.badge-cart= numCart
+							.list-cart-box(id="list_cart_box")
+								.gio-hang
+									.gio-hang-content
+										p.mb-0 Giỏ hàng
+										.text-muted(style="font-size: 13.5px;") 
+											span= "(" + numCart + ") "
+											span Sản phẩm
+									.cart_btn_close.material-icons highlight_off
+								ul(id="productsListInCart")
+									each product_in_cart in cart
+										li.id-product-box(id= product_in_cart._id)
+											.list-cart-img-box
+												img(src=product_in_cart.img)
+											.list-cart-content
+												a.list-cart-content-title(href="/products/details/" + product_in_cart.link)= product_in_cart.title
+												.list-cart-content-price
+													span.text-muted(style="font-size: 13.5px;") Số lượng
+													span.product-in-cart-price= product_in_cart.price
+												.list-cart-content-quantity
 
-											button(onclick=`increaseQuantity('${sessionId}','${product_in_cart._id}', '${product_in_cart.price}')`) +
+													button(onclick=`increaseQuantity('${sessionId}','${product_in_cart._id}', '${product_in_cart.price}')`) +
 
-											input.buy-number-box.buy-number-box-2(value= product_in_cart.quantity)
+													input.buy-number-box.buy-number-box-2(value= product_in_cart.quantity)
 
-											button(onclick=`decreaseQuantity('${sessionId}','${product_in_cart._id}', '${product_in_cart.price}')`) -
-										a(href="#no", onclick=`deleteProduct('${sessionId}','${product_in_cart._id}', '${product_in_cart.price}')`).list-cart-content-unchoose-product.text-primary Bỏ sản phẩm
-						.total-price
-							span Thành tiền
-							span(style="float: right;")= totalPrice
-							a(href="/cart/thanh_toan").btn.btn-primary.btn-order Tiến hành đặt hàng
+													button(onclick=`decreaseQuantity('${sessionId}','${product_in_cart._id}', '${product_in_cart.price}')`) -
+												a(href="#no", onclick=`deleteProduct('${sessionId}','${product_in_cart._id}', '${product_in_cart.price}')`).list-cart-content-unchoose-product.text-primary Bỏ sản phẩm
+								.total-price
+									span Thành tiền
+									span(style="float: right;")= totalPrice
+									a(href="/cart/thanh_toan").btn.btn-primary.btn-order Tiến hành đặt hàng
 
 
 
@@ -223,7 +224,7 @@ html
 												span= brand
 
 
-				ul.other-category.col-9
+				ul.other-category
 					li
 						a(href="/", id="trang_chu") Trang chủ
 					li

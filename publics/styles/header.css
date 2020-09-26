@@ -93,12 +93,13 @@
 
 .other-category{
 	display: flex;
-
+	flex-wrap: wrap;
+	flex-grow: 1;
 	list-style-type: none;
 	justify-content: space-between;
 	/*align-items: center;*/
 	margin: 0px;
-	padding: 0px;
+	padding: 0px 10px;
 
 	position: relative;
 }
@@ -137,22 +138,21 @@
      border: 0.5px solid #0000001c; 
     box-shadow: 1px 1px 0px 0px #ddd;
     height: 243px;
-    width: max-content;
+    width: 180px;
     position: absolute;
-    bottom: 1px;
-    left: 16.73vw;
+    top: 41px;
+    right: -182px;
     display: none;
     z-index: 99;
 }
 
 
 .brand-list {
-	padding: .5rem 1rem 0px 0rem;
+	padding: 8px 16px;
     list-style-type: none;
-    width: max-content;
+    width: 100%;
     /* margin-left: 1.5rem; */
     /* padding-right: 1rem; */
-    margin: 0rem 0px 0px 1.5rem;
 }
 
 .brand-list li {
@@ -201,3 +201,28 @@
 
 
 
+/* responsive wed */
+
+@media only screen and (max-width: 1200px){
+	.header-fluid{
+		height: 55px;
+	}
+	.product-brands-box {
+		top: 56px;
+	}
+}
+
+@media only screen and (max-width: 760px){
+	.other-category{
+		justify-content: flex-start;
+	}
+		.other-category li {
+			margin-right: 15px;
+		}
+	.danh-muc-san-pham{
+		display: none;
+	}
+	.products-category-title {
+		padding: 15px !important;
+	}
+}

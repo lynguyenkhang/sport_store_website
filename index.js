@@ -5,7 +5,7 @@ var express = require('express');
 var app = express();
 var port = process.env.PORT || 3000;
 var mongoose = require('mongoose');
-var bodyParser = require('body-parser');
+// var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
 
 
@@ -14,10 +14,13 @@ mongoose.connect(process.env.MONGOLAB_ROSE_URI);
 
 app.set('view engine', 'pug');
 app.set('views', './views');
-app.use(express.static	('publics'));
+app.use(express.static('publics'));
 
-app.use(bodyParser.json()); // for parsing application/json
-app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
+// app.use(bodyParser.json()); // for parsing application/json
+// app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
+
+app.use(express.json());
+
 
 var secretCookie = "admnadsn@##@7a";
 app.use(cookieParser(secretCookie));
