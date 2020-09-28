@@ -1,6 +1,6 @@
-var Products = require('../../models/products.model.js');
+const Products = require('../../models/products.model.js');
 
 module.exports.getAll = async function(req, res){
-	var products = await Products.find();
+	const products = await Products.find();
 	res.json(products);
 }

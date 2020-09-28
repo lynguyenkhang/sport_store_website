@@ -1,49 +1,42 @@
 require('dotenv').config();
 
+// declare package
+const express = require('express');
+const app = express();
+const port = process.env.PORT || 3000;
+const cookieParser = require('cookie-parser');
+const mongoose = require('mongoose');
 
-var express = require('express');
-var app = express();
-var port = process.env.PORT || 3000;
-var mongoose = require('mongoose');
-// var bodyParser = require('body-parser');
-var cookieParser = require('cookie-parser');
+// declare middlewares
+const sessionMiddleware = require('./middlewares/session.middleware.js');
+const brandsMiddleware = require('./middlewares/brandsList.middleware.js');
+const productMiddleware = require('./middlewares/products.middleware.js');
 
+// declare routes
+const productsRoute = require('./routes/products.route.js');
+const cartRoute = require('./routes/cart.route.js');
+const apiProductsInCartRoute = require('./api/routes/productsInCart.route.js');
+const apiProductsRoute = require('./api/routes/products.route.js');
 
+// set configure
 mongoose.connect(process.env.MONGOLAB_ROSE_URI);	
-
-
 app.set('view engine', 'pug');
 app.set('views', './views');
+
+// use middlewares
 app.use(express.static('publics'));
-
-// app.use(bodyParser.json()); // for parsing application/json
-// app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
-
 app.use(express.json());
-
-
-var secretCookie = "admnadsn@##@7a";
-app.use(cookieParser(secretCookie));
-
-// middlewares
-var sessionMiddleware = require('./middlewares/session.middleware.js');
-var brandsMiddleware = require('./middlewares/brandsList.middleware.js');
-var productMiddleware = require('./middlewares/products.middleware.js');
-
-// routes:
-var productsRoute = require('./routes/products.route.js');
-var cartRoute = require('./routes/cart.route.js');
-var apiProductsInCartRoute = require('./api/routes/productsInCart.route.js');
-var apiProductsRoute = require('./api/routes/products.route.js');
-
+app.use(cookieParser(process.env.secretCookie));
 app.use(sessionMiddleware.sessionId);
 app.use(brandsMiddleware.list);
+
+// router:
 app.use('/api/productsInCart', apiProductsInCartRoute);
 app.use('/api/products', apiProductsRoute);
+
 app.get('/', productMiddleware.load,function(req,res,next){
 	// console.log(req.products[0]);
-
-	// variable "rackets", "shoeslist",... tự đc đưa vào file pug
+	// constiable "rackets", "shoeslist",... tự đc đưa vào file pug
 	// k cần ghi thêm vào phần render
 
 	res.render('index',{
