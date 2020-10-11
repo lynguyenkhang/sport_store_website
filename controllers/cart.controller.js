@@ -1,8 +1,7 @@
-var Cart = require('../models/cart.model.js');
-var Buyers = require('../models/buyers.model.js');
-var Products = require('../models/products.model.js');
-var functions = require('../controllers/functions.js');
-
+const Cart = require('../models/cart.model.js');
+const Buyers = require('../models/buyers.model.js');
+const Products = require('../models/products.model.js');
+const functions = require('../controllers/functions.js');
 
 
 
@@ -11,7 +10,7 @@ module.exports.index = async function(req, res, next){
 }
 
 module.exports.thanh_toan = async function(req, res ,next){
-	var cart = await Cart.find({ sessionId : req.signedCookies.sessionId});
+	let cart = await Cart.find({ sessionId : req.signedCookies.sessionId});
 	cart = cart[0].cart;
 	var empty = functions.isEmpty(cart);
 	if(empty){
@@ -22,13 +21,13 @@ module.exports.thanh_toan = async function(req, res ,next){
 }
 
 module.exports.check_thanh_toan = async function(req, res, next){
-	var fullName = req.body.fullName;
-	var phoneNumber = req.body.phoneNumber;
-	var address = req.body.address;
-	var email = req.body.email;
-	var totalPrice = req.body.totalPrice;
-	var payment_method;
-	var errors = [];
+	let fullName = req.body.fullName;
+	let phoneNumber = req.body.phoneNumber;
+	let address = req.body.address;
+	let email = req.body.email;
+	let totalPrice = req.body.totalPrice;
+	let payment_method;
+	let errors = [];
 
 	if(req.body.payment_method_COD){
 		payment_method = "COD";
@@ -70,16 +69,16 @@ module.exports.check_thanh_toan = async function(req, res, next){
 		return;
 	}
 
-	var now = new Date();
-	var sessionId = req.signedCookies.sessionId;
-	var cart = await Cart.find({ sessionId : sessionId});
+	let now = new Date();
+	let sessionId = req.signedCookies.sessionId;
+	let cart = await Cart.find({ sessionId : sessionId});
 	cart = cart[0].cart;
 
-	var product_obj = {};
-	for(var product in cart){
-		 var item = await Products.find({ _id: product });
+	let product_obj = {};
+	for(let product in cart){
+		 let item = await Products.find({ _id: product });
 		 item =  item[0].price;
-		 var soluong = cart[product];
+		 let soluong = cart[product];
 		 product_obj[`${product}`] = {
 		 	quantity: soluong,
 		 	price: item
@@ -93,7 +92,7 @@ module.exports.check_thanh_toan = async function(req, res, next){
 		email: email
 	}
 
-	var buyer = await Buyers.create({
+	let buyer = await Buyers.create({
 			user: user,
 			cart: product_obj,
 			totalPrice: totalPrice,

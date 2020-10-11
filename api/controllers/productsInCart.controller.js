@@ -1,21 +1,21 @@
-var Cart = require('../../models/cart.model.js');
+const Cart = require('../../models/cart.model.js');
 
 module.exports.getAllSessionsInCart = async function(req, res){
-	var cart = await Cart.find();
+	let cart = await Cart.find();
 	res.json(cart);
 }
 
 module.exports.getOneCart = async function(req, res){
-	var sessionId = req.params.sessionId;
-	var cart = await Cart.find({ sessionId: sessionId});
+	let sessionId = req.params.sessionId;
+	let cart = await Cart.find({ sessionId: sessionId});
 	res.json(cart);
 }
 
 module.exports.updateOneCart = async function(req,res){
-	var sessionId = req.params.sessionId;
-	var changes = req.body;
+	let sessionId = req.params.sessionId;
+	let changes = req.body;
 
-	var this_session = await Cart.find({ sessionId: sessionId});
+	let this_session = await Cart.find({ sessionId: sessionId});
 	if(!this_session.length){
 		await Cart.insertMany({
 			sessionId: sessionId,
@@ -29,7 +29,7 @@ module.exports.updateOneCart = async function(req,res){
 		console.log(`cart with sessionId: ${sessionId} is updated `);
 	}
 
-	var cart = await Cart.find({ sessionId: sessionId});
+	let cart = await Cart.find({ sessionId: sessionId});
 	res.json(cart);
 }
 

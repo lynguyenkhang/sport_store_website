@@ -22,7 +22,7 @@ module.exports.pageNumber = function(currentPage, max) {
 
 
 module.exports.translateProduct = function(product){
-	var result;
+	let result;
 	switch(product){
 		case "Vợt cầu lông":
 			result = "racket"; break;
@@ -43,7 +43,7 @@ module.exports.translateProduct = function(product){
 }
 
 module.exports.translateProduct_2 = function(product){
-	var result;
+	let result;
 	switch(product){
 		case "racket":
 			result = "Vợt cầu lông"; break;
@@ -64,8 +64,8 @@ module.exports.translateProduct_2 = function(product){
 }
 
 module.exports.toUpperFirstLetter = function(brand){
-	var result = brand[0].toUpperCase();
-	for(var i = 1; i < brand.length; i++){
+	let result = brand[0].toUpperCase();
+	for(let i = 1; i < brand.length; i++){
 		result += brand[i];
 	}	
 	return result;
@@ -81,9 +81,9 @@ module.exports.removeWord = function(str, word){
 }
 
 module.exports.addVND = function(str){
-	var result = ''
-	for(var i = 1 ; i <= str.length ; i++){
-		var index = str.length - i;
+	let result = ''
+	for(let i = 1 ; i <= str.length ; i++){
+		let index = str.length - i;
 		if(( i == 4) || (i == 7)) {
 			result = str[index] + '.' + result;
 		} else {

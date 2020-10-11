@@ -1,6 +1,6 @@
- var mongoose = require("mongoose");
+const mongoose = require("mongoose");
 
-var products_Schema = new mongoose.Schema({
+const products_Schema = new mongoose.Schema({
 	product: String,
 	title: String,
 	price: String,
@@ -10,6 +10,6 @@ var products_Schema = new mongoose.Schema({
 	brand: String
 });
 
-var Products = mongoose.model('Products', products_Schema, 'products');
+const Products = mongoose.model('Products_cloudinary', products_Schema, 'products_cloudinary');
 
 module.exports = Products;

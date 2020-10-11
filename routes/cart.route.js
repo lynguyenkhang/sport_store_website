@@ -1,6 +1,6 @@
-var express = require('express');
-var router = express.Router();
-var controller = require('../controllers/cart.controller.js');
+const express = require('express');
+const router = express.Router();
+const controller = require('../controllers/cart.controller.js');
 
 router.get('/', controller.index);
 router.get('/thanh_toan', controller.thanh_toan);
