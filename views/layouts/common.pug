@@ -99,7 +99,7 @@ html
 											.list-cart-img-box
 												img(src=product_in_cart.img)
 											.list-cart-content
-												a.list-cart-content-title(href="/products/details/" + product_in_cart.link)= product_in_cart.title
+												a.list-cart-content-title(href="/products/details/" + product_in_cart._id)= product_in_cart.title
 												.list-cart-content-price
 													span.text-muted(style="font-size: 13.5px;") Số lượng
 													span.product-in-cart-price= product_in_cart.price

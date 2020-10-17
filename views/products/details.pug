@@ -38,7 +38,7 @@ block content
 						button(onclick="increaseNum();") +
 						button(onclick="decreaseNum();") -
 					// a.details-buy-button.btn.btn-primary(id="btn_buy",href="/cart/add/" + product._id + "@1") MUA NGAY
-					button.details-buy-button.btn.btn-primary(id="btn_buy", onclick=`buyProduct('${sessionId}','${product._id}', '${product.link}')`) MUA NGAY
+					button.details-buy-button.btn.btn-primary(id="btn_buy", onclick=`buyProduct('${sessionId}','${product._id}', '${product._id}')`) MUA NGAY
 
 
 				.details-description
@@ -60,11 +60,11 @@ block content
 				.swiper-wrapper
 					each item in productsList
 						li.product-box.card.swiper-slide.swiper-slide-details
-								a(href="/products/details/" + item.link).product-box-img
+								a(href="/products/details/" + item._id).product-box-img
 									img(src=item.img)
 								.card-body-details
-									a(href="/products/details/" + item.link).card-title= item.title
-									a(href="/products/details/" + item.link).card-text= item.price
+									a(href="/products/details/" + item._id).card-title= item.title
+									a(href="/products/details/" + item._id).card-text= item.price
 				//- Add pagination
 				.swiper-pagination.d-none
 				//- Add arrow

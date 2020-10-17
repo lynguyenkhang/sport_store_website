@@ -71,9 +71,6 @@ module.exports.list = async function(req, res, next){
 	
 	res.locals.linkAccessoriesBrands = linkAccessoriesBrands;
 	res.locals.linkAccessoriesBrands_sp = linkAccessoriesBrands.slice(0, 5);
-
-
-
-
+	
 	next();
 }

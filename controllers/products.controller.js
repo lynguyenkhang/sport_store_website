@@ -2,12 +2,7 @@ const Products = require('../models/products.model.js');
 const functions = require('./functions.js');
 
 module.exports.index = async function(req, res){
-
-	if(!req.query.page){
-		let page = 1;
-	} else {
-		let page = req.query.page;
-	}
+	let page = !req.query.page ? 1 : req.query.page;
 
 	let paginationNumber = functions.pageNumber(page, 5);
 
@@ -226,7 +221,7 @@ module.exports.view = async function(req, res){
 
 
 module.exports.view_details = async function(req,res){
-	let product = await Products.findOne({ link : req.params.sp});
+	let product = await Products.findOne({ _id : req.params.sp});
 	let productsList = await Products.find({
 		product: product.product,
 		brand: product.brand

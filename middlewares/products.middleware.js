@@ -17,6 +17,7 @@ module.exports.load = async function(req, res, next){
 
 	rackets = rackets_yonex1.concat(rackets_lining).concat(rackets_victor).concat(rackets_yonex2);
 	req.rackets = rackets;
+	// req.racketsList = rackets;
 
 	//load Shoes database
 	let shoes_lining = await Products.find({ product: "shoes", brand:"lining"});

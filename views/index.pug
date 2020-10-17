@@ -90,11 +90,11 @@ block content
 				.swiper-wrapper
 					each racket in rackets
 						li.product-box.card.swiper-slide
-								a(href="/products/details/" + racket.link).product-box-img
+								a(href="/products/details/" + racket._id).product-box-img
 									img(src=racket.img)
 								.card-body
-									a(href="/products/details/" + racket.link).card-title= racket.title
-									a(href="/products/details/" + racket.link).card-text= racket.price
+									a(href="/products/details/" + racket._id).card-title= racket.title
+									a(href="/products/details/" + racket._id).card-text= racket.price
 				//- Add pagination
 				.swiper-pagination
 				//- Add arrow
@@ -117,11 +117,11 @@ block content
 				.swiper-wrapper
 					each shoes in shoesList
 						li.product-box.card.swiper-slide
-								a(href="/products/details/" + shoes.link).product-box-img
+								a(href="/products/details/" + shoes._id).product-box-img
 									img(src=shoes.img)
 								.card-body
-									a(href="/products/details/" + shoes.link).card-title= shoes.title
-									a(href="/products/details/" + shoes.link).card-text= shoes.price
+									a(href="/products/details/" + shoes._id).card-title= shoes.title
+									a(href="/products/details/" + shoes._id).card-text= shoes.price
 				//- Add pagination
 				.swiper-pagination
 				//- Add arrow
@@ -143,11 +143,11 @@ block content
 				.swiper-wrapper
 					each t_shirt in t_shirtList
 						li.product-box.card.swiper-slide
-								a(href="/products/details/" + t_shirt.link).product-box-img
+								a(href="/products/details/" + t_shirt._id).product-box-img
 									img(src=t_shirt.img)
 								.card-body
-									a(href="/products/details/" + t_shirt.link).card-title= t_shirt.title
-									a(href="/products/details/" + t_shirt.link).card-text= t_shirt.price
+									a(href="/products/details/" + t_shirt._id).card-title= t_shirt.title
+									a(href="/products/details/" + t_shirt._id).card-text= t_shirt.price
 				//- Add pagination
 				.swiper-pagination
 				//- Add arrow
@@ -171,11 +171,11 @@ block content
 				.swiper-wrapper
 					each pants in pantsList
 						li.product-box.card.swiper-slide
-								a(href="/products/details/" + pants.link).product-box-img
+								a(href="/products/details/" + pants._id).product-box-img
 									img(src=pants.img)
 								.card-body
-									a(href="/products/details/" + pants.link).card-title= pants.title
-									a(href="/products/details/" + pants.link).card-text= pants.price
+									a(href="/products/details/" + pants._id).card-title= pants.title
+									a(href="/products/details/" + pants._id).card-text= pants.price
 				//- Add pagination
 				.swiper-pagination
 				//- Add arrow
@@ -197,11 +197,11 @@ block content
 				.swiper-wrapper
 					each balo in baloList
 						li.product-box.card.swiper-slide
-								a(href="/products/details/" + balo.link).product-box-img
+								a(href="/products/details/" + balo._id).product-box-img
 									img(src=balo.img)
 								.card-body
-									a(href="/products/details/" + balo.link).card-title= balo.title
-									a(href="/products/details/" + balo.link).card-text= balo.price
+									a(href="/products/details/" + balo._id).card-title= balo.title
+									a(href="/products/details/" + balo._id).card-text= balo.price
 				//- Add pagination
 				.swiper-pagination
 				//- Add arrow
@@ -223,11 +223,11 @@ block content
 				.swiper-wrapper
 					each accessories in accessoriesList
 						li.product-box.card.swiper-slide
-								a(href="/products/details/"  + accessories.link).product-box-img
+								a(href="/products/details/"  + accessories._id).product-box-img
 									img(src=accessories.img)
 								.card-body
-									a(href="/products/details/"  + accessories.link).card-title= accessories.title
-									a(href="/products/details/"  + accessories.link).card-text= accessories.price
+									a(href="/products/details/"  + accessories._id).card-title= accessories.title
+									a(href="/products/details/"  + accessories._id).card-text= accessories.price
 				//- Add pagination
 				.swiper-pagination
 				//- Add arrow

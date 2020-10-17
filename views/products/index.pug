@@ -43,11 +43,11 @@ block content
 			//- reuse from products-slider component
 			each product in productList
 				li.product-box.card.all-products-box
-						a(href="details/" + product.link).product-box-img
+						a(href="/products/details/" + product._id).product-box-img
 							img(src=product.img)
 						.card-body.mb-3
-							a(href="details/" + product.link).card-title= product.title
-							a(href="details/" + product.link).card-text= product.price
+							a(href="/products/details/" + product._id).card-title= product.title
+							a(href="/products/details/" + product._id).card-text= product.price
 
 
 		.pagination-nav(aria-label='Page navigation example')
