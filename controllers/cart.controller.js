@@ -12,7 +12,7 @@ module.exports.index = async function(req, res, next){
 module.exports.thanh_toan = async function(req, res ,next){
 	let cart = await Cart.find({ sessionId : req.signedCookies.sessionId});
 	cart = cart[0].cart;
-	var empty = functions.isEmpty(cart);
+	let empty = functions.isEmpty(cart);
 	if(empty){
 		res.redirect('/');
 		return;
