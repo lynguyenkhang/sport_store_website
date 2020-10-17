@@ -1,6 +1,6 @@
-var express = require('express');
-var router = express.Router();
-var controller = require('../controllers/products.controller.js');
+const express = require('express');
+const router = express.Router();
+const controller = require('../controllers/products.controller.js');
 
 router.get('/', controller.index);
 router.get('/search', controller.search);

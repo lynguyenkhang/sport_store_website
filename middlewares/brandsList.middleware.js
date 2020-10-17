@@ -1,9 +1,9 @@
-var Product_brands = require('../models/products_brands.model.js');
+const Product_brands = require('../models/products_brands.model.js');
 
 
 // chuyển tiếng Việt không dấu
 function convertVNese(alias) {
-    var str = alias;
+    let str = alias;
     str = str.toLowerCase();
     str = str.replace(/à|á|ạ|ả|ã|â|ầ|ấ|ậ|ẩ|ẫ|ă|ằ|ắ|ặ|ẳ|ẵ/g,"a"); 
     str = str.replace(/è|é|ẹ|ẻ|ẽ|ê|ề|ế|ệ|ể|ễ/g,"e"); 
@@ -18,7 +18,7 @@ function convertVNese(alias) {
     return str;
 }
  function addSpace(alias){
- 	var str = alias;
+ 	let str = alias;
     str = str.replace(/-/g," ");
     return str;
  }
@@ -29,7 +29,7 @@ function convertVNese(alias) {
 
 module.exports.list = async function(req, res, next){
 
-	var brands = await Product_brands.find();
+	let brands = await Product_brands.find();
 	// console.log(brands);
 	// console.log(brands[0].brands);
 	
@@ -58,10 +58,10 @@ module.exports.list = async function(req, res, next){
 	// console.log(convertVNese(accessoriesBrands[0]));
 	// console.log(addSpace(accessoriesBrands[0]));
 
-	var nameAccessoriesBrands = [];
-	var linkAccessoriesBrands = [];
+	let nameAccessoriesBrands = [];
+	let linkAccessoriesBrands = [];
 
-	for(var i of accessoriesBrands){
+	for(let i of accessoriesBrands){
 		nameAccessoriesBrands.push(addSpace(i));
 		linkAccessoriesBrands.push(convertVNese(i));
 	}
@@ -71,9 +71,6 @@ module.exports.list = async function(req, res, next){
 	
 	res.locals.linkAccessoriesBrands = linkAccessoriesBrands;
 	res.locals.linkAccessoriesBrands_sp = linkAccessoriesBrands.slice(0, 5);
-
-
-
-
+	
 	next();
 }

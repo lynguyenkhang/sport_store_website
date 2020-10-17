@@ -1,7 +1,7 @@
-var shortid = require('shortid');
-var Cart = require('../models/cart.model.js');
-var Products = require('../models/products.model.js'); 
-var functions = require('../controllers/functions.js');
+const shortid = require('shortid');
+const Cart = require('../models/cart.model.js');
+const Products = require('../models/products.model.js'); 
+const functions = require('../controllers/functions.js');
 
 module.exports.sessionId = async function(req, res, next){
 	if(!req.signedCookies.sessionId){
@@ -12,25 +12,25 @@ module.exports.sessionId = async function(req, res, next){
 		return;
 	} else {
 		// show quantity of products in cart
-		var sessionId = req.signedCookies.sessionId;
-		var this_session = await Cart.find({ sessionId : sessionId});
-		var cart;
-		var productsInCart = [];
-		var numCart = 0;
-		var totalPrice = 0; 
+		let sessionId = req.signedCookies.sessionId;
+		let this_session = await Cart.find({ sessionId : sessionId});
+		let cart;
+		let productsInCart = [];
+		let numCart = 0;
+		let totalPrice = 0; 
 		if(this_session.length){
 			cart = this_session[0].cart;
-			for(var product in cart){
+			for(let product in cart){
 				numCart += cart[product];
-				var item = await Products.find({ _id : product });
+				let item = await Products.find({ _id : product });
 				item[0]["quantity"] = cart[product];
 				productsInCart.push(item[0]);
 
 				// calculate total 
-				var end = item[0].price.length - 2;
-				var priceStr = item[0].price.slice(0, end);
+				let end = item[0].price.length - 2;
+				let priceStr = item[0].price.slice(0, end);
 				priceStr = functions.removeWord(priceStr,'.');
-				var price = parseInt(priceStr);
+				let price = parseInt(priceStr);
 				totalPrice += (price * cart[product]);
 			}
 		}

@@ -65,11 +65,11 @@ block content
 				//- reuse from products-slider component
 				each product in productList
 					li.product-box.card.all-products-box(class=product.brand, class=product.price, id=product.title)
-							a(href="details/" + product.link).product-box-img
+							a(href="details/" + product._id).product-box-img
 								img(src=product.img)
 							.card-body.mb-3
-								a(href="details/" + product.link).card-title= product.title
-								a(href="details/" + product.link).card-text= product.price
+								a(href="details/" + product._id).card-title= product.title
+								a(href="details/" + product._id).card-text= product.price
 
 
 	script(src="/type_product.js")

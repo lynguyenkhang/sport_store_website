@@ -1,14 +1,14 @@
-var Products = require('../models/products.model.js'); 
+const Products = require('../models/products.model.js'); 
 
 
 
 module.exports.load = async function(req, res, next){
-	// var products = await Products.find();
+	// let products = await Products.find();
 
 	// load Rackets database
-	var rackets_lining = await Products.find({ product: "racket", brand:"lining"});
-	var rackets_yonex = await Products.find({ product: "racket", brand:"yonex"});
-	var rackets_victor = await Products.find({ product: "racket", brand:"victor"});
+	let rackets_lining = await Products.find({ product: "racket", brand:"lining"});
+	let rackets_yonex = await Products.find({ product: "racket", brand:"yonex"});
+	let rackets_victor = await Products.find({ product: "racket", brand:"victor"});
 
 	rackets_lining = rackets_lining.slice(0,3);
 	rackets_yonex1 = rackets_yonex.slice(0,4);
@@ -17,11 +17,12 @@ module.exports.load = async function(req, res, next){
 
 	rackets = rackets_yonex1.concat(rackets_lining).concat(rackets_victor).concat(rackets_yonex2);
 	req.rackets = rackets;
+	// req.racketsList = rackets;
 
 	//load Shoes database
-	var shoes_lining = await Products.find({ product: "shoes", brand:"lining"});
-	var shoes_yonex = await Products.find({ product: "shoes", brand:"yonex"});
-	var shoes_victor = await Products.find({ product: "shoes", brand:"victor"});
+	let shoes_lining = await Products.find({ product: "shoes", brand:"lining"});
+	let shoes_yonex = await Products.find({ product: "shoes", brand:"yonex"});
+	let shoes_victor = await Products.find({ product: "shoes", brand:"victor"});
 
 	shoes_lining = shoes_lining.slice(0,3);
 	shoes_yonex1 = shoes_yonex.slice(0,4);
@@ -32,9 +33,9 @@ module.exports.load = async function(req, res, next){
 	req.shoesList = shoesList;
 
 	//load T_SHIRT database
-	var t_shirt_lining = await Products.find({ product: "t_shirt", brand:"lining"});
-	var t_shirt_yonex = await Products.find({ product: "t_shirt", brand:"yonex"});
-	var t_shirt_victor = await Products.find({ product: "t_shirt", brand:"victor"});
+	let t_shirt_lining = await Products.find({ product: "t_shirt", brand:"lining"});
+	let t_shirt_yonex = await Products.find({ product: "t_shirt", brand:"yonex"});
+	let t_shirt_victor = await Products.find({ product: "t_shirt", brand:"victor"});
 
 	t_shirt_lining = t_shirt_lining.slice(0,4);
 	t_shirt_yonex1 = t_shirt_yonex.slice(0,2);
@@ -46,9 +47,9 @@ module.exports.load = async function(req, res, next){
 
 
 	//load PANTS database
-	var pants_lining = await Products.find({ product: "pants", brand:"lining"});
-	var pants_yonex = await Products.find({ product: "pants", brand:"yonex"});
-	var pants_victor = await Products.find({ product: "pants", brand:"victor"});
+	let pants_lining = await Products.find({ product: "pants", brand:"lining"});
+	let pants_yonex = await Products.find({ product: "pants", brand:"yonex"});
+	let pants_victor = await Products.find({ product: "pants", brand:"victor"});
 
 	pants_lining = pants_lining.slice(0,4);
 	pants_yonex1 = pants_yonex.slice(0,2);
@@ -60,9 +61,9 @@ module.exports.load = async function(req, res, next){
 
 
 	//load BALO database
-	var balo_lining = await Products.find({ product: "balo", brand:"lining"});
-	var balo_yonex = await Products.find({ product: "balo", brand:"yonex"});
-	var balo_victor = await Products.find({ product: "balo", brand:"victor"});
+	let balo_lining = await Products.find({ product: "balo", brand:"lining"});
+	let balo_yonex = await Products.find({ product: "balo", brand:"yonex"});
+	let balo_victor = await Products.find({ product: "balo", brand:"victor"});
 
 	balo_lining = balo_lining.slice(0,4);
 	balo_yonex1 = balo_yonex.slice(0,2);
@@ -74,9 +75,9 @@ module.exports.load = async function(req, res, next){
 
 	//load ACCESSORIES database
 	//load BALO database
-	var socks_lining = await Products.find({ product: "socks", brand:"lining"});
-	var string_yonex = await Products.find({ product: "string", brand:"yonex"});
-	var grip_victor = await Products.find({ product: "grip", brand:"victor"});
+	let socks_lining = await Products.find({ product: "socks", brand:"lining"});
+	let string_yonex = await Products.find({ product: "string", brand:"yonex"});
+	let grip_victor = await Products.find({ product: "grip", brand:"victor"});
 
 	socks_lining = socks_lining.slice(0,4);
 	string_yonex1 = string_yonex.slice(0,4);

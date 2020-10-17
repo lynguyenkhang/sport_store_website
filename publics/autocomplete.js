@@ -61,7 +61,7 @@ function autocomplete(inp, arr){
 			link_el = document.createElement("A");
 			link_el.setAttribute("class", "item-link");
 			if(suggestions == 1) link_el.classList.add("mt-0");
-			link_el.setAttribute("href", `/products/details/${arr[i].link}`);
+			link_el.setAttribute("href", `/products/details/${arr[i]._id}`);
 
 			var img_el = document.createElement("IMG");
 			img_el.setAttribute("src", arr[i].img);

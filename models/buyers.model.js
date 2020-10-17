@@ -1,6 +1,6 @@
-var mongoose = require("mongoose");
+const mongoose = require("mongoose");
 
-var buyers_Schema = new mongoose.Schema({
+const buyers_Schema = new mongoose.Schema({
 	user: Object,
 	cart: Object,
 	totalPrice: String,
@@ -9,6 +9,6 @@ var buyers_Schema = new mongoose.Schema({
 	endTime: Date 
 });
 
-var Buyers = mongoose.model('Buyers', buyers_Schema, 'buyers');
+const Buyers = mongoose.model('Buyers', buyers_Schema, 'buyers');
 
 module.exports = Buyers;
