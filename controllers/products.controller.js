@@ -113,12 +113,8 @@ module.exports.search = async function(req,res){
 
 
 	//Create pagination
-	if(!req.query.page){
-			let page = 1;
-		} else {
-			let page = req.query.page;
-		}
 
+		let page = !req.query.page ? 1 : req.query.page;
 		let paginationNumber = functions.pageNumber(page, 10);
 
 

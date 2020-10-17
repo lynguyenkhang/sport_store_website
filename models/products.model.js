@@ -5,11 +5,9 @@ const products_Schema = new mongoose.Schema({
 	title: String,
 	price: String,
 	img: String,
-	linkDownImg: String,
-	link: String,
 	brand: String
 });
 
-const Products = mongoose.model('Products_cloudinary', products_Schema, 'products_cloudinary');
+const Products = mongoose.model('Products', products_Schema, 'products');
 
 module.exports = Products;
