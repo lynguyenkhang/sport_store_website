@@ -20,9 +20,10 @@ module.exports.sessionId = async function(req, res, next){
 		let totalPrice = 0; 
 		if(this_session.length){
 			cart = this_session[0].cart;
+			let products = await Products.find({});
 			for(let product in cart){
 				numCart += cart[product];
-				let item = await Products.find({ _id : product });
+				let item = products.filter(item => item._id == product)
 				item[0]["quantity"] = cart[product];
 				productsInCart.push(item[0]);
 

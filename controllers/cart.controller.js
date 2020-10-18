@@ -74,9 +74,10 @@ module.exports.check_thanh_toan = async function(req, res, next){
 	let cart = await Cart.find({ sessionId : sessionId});
 	cart = cart[0].cart;
 
+	let products = await Products.find({});
 	let product_obj = {};
 	for(let product in cart){
-		 let item = await Products.find({ _id: product });
+		 let item = products.filter(item => item._id == product)
 		 item =  item[0].price;
 		 let soluong = cart[product];
 		 product_obj[`${product}`] = {

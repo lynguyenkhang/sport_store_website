@@ -1,6 +1,7 @@
 const Products = require('../models/products.model.js');
 const functions = require('./functions.js');
 
+
 module.exports.index = async function(req, res){
 	let page = !req.query.page ? 1 : req.query.page;
 
@@ -217,11 +218,22 @@ module.exports.view = async function(req, res){
 
 
 module.exports.view_details = async function(req,res){
-	let product = await Products.findOne({ _id : req.params.sp});
-	let productsList = await Products.find({
-		product: product.product,
-		brand: product.brand
-	});
+	let products = await Products.find({});
+
+	let product = products.filter((item) => item._id == req.params.sp)
+	product = product[0]	
+
+	// let productsList = await Products.find({
+	// 	product: product.product,
+	// 	brand: product.brand
+	// });
+
+	let productsList = products.filter(item => {
+		const condition1 = item.product === product.product;
+		const condition2 = item.brand === product.brand;
+		return condition1 && condition2
+	})
+
 
 	let type_product = functions.translateProduct_2(product.product);
 	let upperBrand = functions.toUpperFirstLetter(product.brand);
