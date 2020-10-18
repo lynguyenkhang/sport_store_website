@@ -223,11 +223,6 @@ module.exports.view_details = async function(req,res){
 	let product = products.filter((item) => item._id == req.params.sp)
 	product = product[0]	
 
-	// let productsList = await Products.find({
-	// 	product: product.product,
-	// 	brand: product.brand
-	// });
-
 	let productsList = products.filter(item => {
 		const condition1 = item.product === product.product;
 		const condition2 = item.brand === product.brand;
