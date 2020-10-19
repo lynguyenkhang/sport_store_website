@@ -2,7 +2,7 @@ const Cart = require('../models/cart.model.js');
 const Buyers = require('../models/buyers.model.js');
 const Products = require('../models/products.model.js');
 const functions = require('../controllers/functions.js');
-
+const mongoose  = require('mongoose');
 
 
 module.exports.index = async function(req, res, next){
@@ -77,7 +77,7 @@ module.exports.check_thanh_toan = async function(req, res, next){
 	let products = await Products.find({});
 	let product_obj = {};
 	for(let product in cart){
-		 let item = products.filter(item => item._id == product)
+		 let item = await Products.find({ _id: mongoose.Types.ObjectId(product) });
 		 item =  item[0].price;
 		 let soluong = cart[product];
 		 product_obj[`${product}`] = {
